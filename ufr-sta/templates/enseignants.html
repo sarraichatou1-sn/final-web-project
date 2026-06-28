@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="enseignants">
+    <h1>Nos Enseignants</h1>
+    <p class="introductif">
+        L'UFR des Sciences et Technologies Avancées dispose d'une équipe d'enseignants-chercheurs
+        qualifiés , engagés dans la formation des étudiants et le développement de la recherche scientifique
+
+    </p>
+    <div class="Enseignant">
+        <img src="{{ url_for('static', filename='images/enseignant1.jpg') }}" alt="Enseignant">
+        <h2>Dr.Alioune COULIBALY</h2>
+        <p>Directeur de L'UFR Sciences et Technologies Avancées</p>
+        <p><strong>Grade :</strong>Maitre de Conférence Titulaire - Enseignant-Chercheur</p>
+        <p><strong>Spécialité :</strong>Mathématiques appliquées</p>
+        <p>Thématiques de recherche</p>
+        <li>Equations aux dérivées partielles</li>
+        <li>Analyse fonctionnelle</li>
+        <li>Probabilité - Statistique</li>
+        <li>Systémes dynamiques</li>
+        <li>Calcul stochastique</li>
+        <p><strong>Email :</strong>alioune.coulibaly@uam.edu.sn</p>
+
+    </div>
+    <div class="Enseignant">
+        <img src="{{ url_for('static', filename='images/enseignant2.jpg') }}" alt="Enseignant">
+        <h2>Pr.Amadou Dahirou GUEYE</h2>
+        <P>Vice-Recteur chargé des Affaires pédagogiques et de la vie Universitaire </P>
+        <p><strong>Grade :</strong>Professeur Titulaire - Enseignant-Chercheur</p>
+        <p><strong>Spécialité :</strong> Informatique</p>
+        <p>Thématiques de recherche</p>
+        <li>Télé laboratoire et Organisations virtuelles </li>
+        <li>Télé-enseignement</li>
+        <li>Intelligence artificielle appliquée à la santé , la sécurité routiére ,l'éducation et l'environnement</li>
+        <li>Internet des Objects et Cloud</li>
+        <p><strong>Email :</strong>dahirou.gueye@uam.edu.sn</p>
+
+    </div>
+    <div class="Enseignant">
+        <img src="{{ url_for('static', filename='images/enseignant3.jpg') }}" alt="Enseignant">
+        <h2>Dr.Thierno Mohamadane Mansour SOW</h2>
+        <p>Chef de département Mathématiques Informatique et modélisation (MIM)</p>
+        <p><strong>Grade :</strong>Maitre de Conférence Titulaire - Enseignant-Chercheur</p>
+        <p><strong>Spécialité :</strong>Mathématiques appliquées</p>
+        <p>Thématiques de recherche</p>
+        <li>Analyse non linéaire</li>
+        <li>Géométrie des espaces de Banach</li>
+        <li>Optimisation et méthodes itératives</li>
+        <li>Analyse Fonctionnelle</li>
+        <li>Calcul des Variations</li>
+        <p><strong>Email :</strong>thierno.sow@uam.edu.sn</p>
+
+    </div>
+    <div class="Enseignant">
+        <img src="{{ url_for('static', filename='images/enseignant4.jpg') }}" alt="Enseignant">
+        <h2>Dr.Makha NDAO</h2>
+        <p>Chef de département Sciences de la Mer et de l'Univers (SMU)</p>
+        <p><strong>Grade :</strong>Maitre de Conférence Titulaire - Enseignant-Chercheur en Nanosciences Nanotechnologie Matériaux </p>
+        <p><strong>Spécialité :</strong>Physique : MILIEUX DENSES ET MATERIAUX</p>
+        <p>Thématiques de recherche</p>
+        <li>Biomasse et stockage d'énergie et traitement des eaux</li>
+        <li>Polyméres et élastoméres pour industrie</li>
+        <li>Séparation des phases fluides (Simulation numérique et expériences)</li>
+        <li>Pollution marine par les microplastiques</li>
+        <li>Qualité des eaux et traitements ( Osmose inverse , Nanofiltration ,ultrafiltration ,Microfiltration)</li>
+        <li>Diffusion de la Chaleur</li>
+        <p><strong>Email :</strong>makha.ndao@uam.edu.sn</p>
+
+    </div>
+    <div class="Enseignant">
+        <img src="{{ url_for('static', filename='images/enseignant5.jpg') }}" alt="Enseignant">
+        <h2>Dr.Siny NDOYE</h2>
+        <p><strong>Grade :</strong>Maitre de Conférence Titulaire - Enseignant-Chercheur</p>
+        <p><strong>Spécialité :</strong>Physique : Océanographie et Applications</p>
+        <p>Thématiques de recherche</p>
+        <li>Dynamique Océanique ( hydrodynamique des fluides géophysiques)</li>
+        <li>Dynamique del'Upwelling cotier Ouest Africain</li>
+        <li>Pollution marine et dimensionnement d'émissaire en mer</li>
+        <li>Changement Climatique et Evénements extremes (impact du changement Climatique sur la dynamique océanique)</li>
+        <li>Modélisation hydrodynamique de l'environnement marin et cotier</li>
+        <p><strong>Email :</strong>siny.ndoye@uam.edu.sn</p>
+    </div>
+    <div class="Enseignant">
+        <img src="{{ url_for('static', filename='images/enseignant6.jpg') }}" alt="Enseignant">
+        <h2>Pr.Issa SAKHO</h2>
+        <p><strong>Grade :</strong>Professeur assimilé - Enseignant-Chercheur</p>
+        <p><strong>Spécialité :</strong>Géosciences marines et littorales</p>
+        <p>Dynamique physique des systémes sédimentaux littoraux</p>
+        <li>Forçages météo-océaniques,Risques littoraux et infrastructures de protection cotiére(SD et SFN)</li>
+        <li>Transfert de matiéres (eau,sédiment,dissout)dans les grands hydro-systémes:de la source à la mer </li>
+        <li>Dynamique et Fonctionnement des écosystémes de carbone bleu : mangroves et herbiers marins</li>
+        <p><strong>Email :</strong>issa.sakho@uam.edu.sn</p>
+    </div>
+
+</section>
+    
+{% endblock  %}
+    

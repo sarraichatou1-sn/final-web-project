@@ -1,0 +1,66 @@
+ {% extends "base.html" %}
+ {% block content %}
+ <section class="Actualites">
+    <h1>Actualités</h1>
+    <p>
+        Embarquez-vous au coeur de l'UFR STA . Ici vous retrouverez toutes les dernieres informations concernant
+        les activités, événements et annonces de l'UFR des Sciences et 
+        Technologies Avancées
+    </p>
+
+    <div class="actualite">
+
+         <img src="{{ url_for('static', filename='images/excellence.jpg') }}" alt="Journée de l'Excellence">
+
+         <h2>Journée d'Excellence de l'UFR</h2>
+         
+         <p>
+            L'Amicale des Etudiants de l'UFR STA a organisé une cérémonie mettant à
+            l'honneur le mérite le culte de la performance et de l'excellence académique.
+            Lors de cette journée d'excellence les étudiants les plus méritants ont été
+            récompensés pour leurs excellents résultats et leur engagement.
+            Cette journée est aussi marquée par des concours de génie en herbe
+            favorisant l'émulation intellectuelle
+         </p>
+         <p><strong>Date :</strong> Mai 2026</p>
+
+    </div>
+
+    <div class="actualite">
+        <img src="{{ url_for('static', filename='images/camp-terrain.jpg') }}" alt="Camp de terrain">
+
+        <h2>Camp de terrain</h2>
+
+        <p>
+            Les étudiants de la Science de la Mer et du Littoral(SML)ont effectué
+            des stages et des travaux grandeur nature dans le Delta du Sine Saloum 
+            pour mettre en pratique ce qu'ils ont vu en cours.
+            Cette activité leur a permis d'acquérir une expérience concréte de l'étude
+            sur le terrain
+        </p>
+        <p><strong> Date :</strong> Juillet 2025</p>
+
+
+    </div>
+
+    <div class="actualite">
+        <img src="{{ url_for('static', filename='images/perspectives-academiques.jpg') }}" alt="perspectives-academiques">
+
+        <h2>Perspectives Académiques</h2>
+        <p>
+            L'UFR a récemment tenu son amphi de rentrée sous la direction du Directeur,Dr <strong>Alioune COULIBALY</strong>
+            pour accompagner ses nouveaux étudiants et a aussi lancé des appels à candidature
+            pour le recrutement d'enseignants-chercheurs (PER) dans les domaines allant des mathématiques
+            à l'intelligence artificielle jusqu'au Génie cotier.
+        </p>
+
+    </div>
+    
+
+    
+
+ </section>
+
+    
+ {% endblock  %}
+    

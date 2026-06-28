@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="contact">
+    <h1>Contactez-nous!!</h1>
+    <p class="intro">
+        Souhaitez-vous obtenir des informations sur nos formations , nos départements ou nos
+        activités ? Notre équipe est à votre entiére disposition pour répondre à toutes vos
+        questions 
+
+    </p>
+    <div class="contact-container">
+        <h2>Nos Coordonnées</h2>
+        <p>📍<strong>Adresse :</strong> <br>
+         Université Amadou Mahtar MBOW(UAM) <br>
+        Rue 21x20,2éme Arrondissement,Pole Urbain de Diamnadio-BP:45927 Dakar NAFA VDN Dakar,Senegal</p>
+        <p>📞<strong>Téléphone :</strong> +221 33 844 10 00</p>
+        <P>📧<strong>Email :</strong>uam@uam.edu.sn</P>
+        <p>🕘<strong>Horaire d'Ouverture :</strong><br>
+          Lundi-Vendredi <br>
+          08h00-17h00</p>
+    </div>
+    <div class="contact-form">
+        <h2>Envoyez-nous un message</h2>
+        <form >
+            <input type="text" placeholder="Nom" required>
+            <input type="text" placeholder="Prénom" required>
+            <input type="email" placeholder="Adresse-Email" required>
+            <input type="text" placeholder="Sujet" required>
+            <textarea rows="6" placeholder="Votre message..." required></textarea>
+            <button type="submit">Envoyer votre message</button>
+
+        </form>
+
+    </div>
+    <div class="map">
+        <h2>Notre localisation</h2>
+
+        <p>
+          📍 Université Amadou Mahtar Mbow (UAM), Diamniadio, Sénégal
+       </p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Université+Amadou+Mahtar+Mbow+Diamniadio"
+   target="_blank"
+   class="btn-map">
+    Ouvrir Google Maps
+        </a>
+
+    </div>
+
+</section>
+    
+{% endblock  %}
+    

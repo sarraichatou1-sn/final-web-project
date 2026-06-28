@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="Activite">
+        <h1>Les Activités de l'UFR</h1>
+        <P>
+            L'UFR des Siences et Technologies Avancées organise réguliérement des activités 
+            académiques , scientifiques , culturelles et sportives afin de renforcer les 
+            compétences de ses étudiants et aussi favoriser leur développement personnel
+        </P>
+        <div class="activites">
+             <img src="{{ url_for('static', filename='images/conference.jpg') }}" alt="Conférence">
+            <h2>Grande Conférence de L'UFR</h2>
+            <p>
+                Dans le cadre de son Programme <strong>CYCLE des GRANDES CONFERENCES </strong>l'UFR 
+                des Sciences et Technologies Avancées toujours dans le but de promouvoir
+                l'échange de connaissances et le partage d'expériences scientifiques
+                a accueilli le Pr <strong> Abdou Sene</strong> spécialiste renommé 
+                internationale en <strong>Mathématiques appliquées</strong> et en <strong>Modelisation Numérique</strong>
+            </p>
+            <p>
+                Son intervention était consacrée aux <strong>principes de la modélisation mathematiques</strong>
+                et au <strong>calcul scientifique </strong>. Il a aussi insisté sur l'importance stratégique 
+                du calcul scientifique dans l'aide à la décision politique en tant qu'outil de rationalisation
+                et de modélisation perspective . Le professeur  Sene a aussi partagé avec les étudiants les 
+                perspectives professionnelles et les opportunités entrepreneuriales offertes par les secteurs 
+                du numérique et des mathématiques appliquées
+
+            </p>
+            <p>
+                En somme cette activité a permis aux participants d'approfondir leurs connaissances , 
+                de découvrir les avancées récentes dans le domaine scientifique et d'échanger directement avec 
+                un expert reconnu
+            </p>
+            <p><strong>Date & Lieu:</strong> Le 30 Avril 2025 Amphitheatre de l'UAM</p>
+
+        </div>
+
+        <div class="activites">
+             <img src="{{ url_for('static', filename='images/projets-iot.jpg') }}" alt="Projets_iot">
+             <h2>Atelier d'Internet of Things(IOT)</h2>
+             <p>
+                Les étudiants de le licence 3 en Informatique ont présenté leurs projets <strong>IOT</strong>
+                devant leur professeur , le <strong>CSA</strong> Mr <strong>Aidara Ngom</strong> et leurs camarades
+                Cette activité a permis de mettre en valeur les compétences acquises durant leur formation à
+                travers des solutions technologiques innovantes.
+             </p>
+             <P>
+                Au cours de cette présentation , plusieurs projets innovants ont été exposé, illustrant les 
+                compétences techniques et la créativité des étudiants. Parmis ces réalisations on peut citer:
+             </p>
+                <li>Systéme de parking intelligent(Smart parking)</li>
+                <li>Systéme d'arrosage automatique</li>
+                <li>Serrure intelligente</li>
+                <li>Détecteur de mouvement</li>
+                <li>Detecteur d'incendie ...</li>
+             
+             <p>
+                Cette présentation a permis à nos étudiants de pouvoir mettre en pratique ce qu'ils ont appris 
+                en classe de pouvoir stimuler leur capacité  aussi d'améliorer leur compétence en communication
+                et en travail d'équipe
+             </p>
+             <p><strong> Date & Lieu:</strong>Mai 2026 dans la Bibliotheque Universitaire au niveau de l'ODC</p>
+
+        </div>
+
+        <div class="activites">
+             <img src="{{ url_for('static', filename='images/photo-activités.jpg') }}" alt="Photos-activites sportives">
+             <h2>Activités Sportives et culturelles de l'UFR</h2>
+             <p>
+                Des rencontres sportives entre filiére ou parfois entre département sont organisées par les
+                étudiants au sein de l'UFR.
+                Ces rencontres offrent egalement des moments de détente et de convivialité favorisant
+                leur épanouissement physique et social
+             </p>
+
+             <p>
+                Nous assistons aussi à des matchs de Génie en Herbe souvent organisés par l'Amicale des étudiants
+                de l'UFR STA.Cette activité  reunit les étudiants autour des questions de culture
+                générale , de science , de technologie et d'actualité leur permettant ainsi de stimuler
+                leur réflexion et de renforcer le travail en équipe.
+                
+             </p>
+
+        </div>
+        <div class="activites">
+            <h2> Quelques Sorties Pédagogiques de l'UFR</h2>
+
+            <img src="{{ url_for('static', filename='images/sortie-pédagogique1.jpg') }}" alt="Dans le Delta du Sine-Saloum">
+            <p>
+                Dans le but de consolider les aspects théoriques vue en classe les étudiants en licence 2
+                Sciences de la Mer et du Littoral(SML) accompagnés par le <Strong>Dr Siny Ndoye</Strong>
+                <strong>Enseignant Chercheur</strong> au Département de la SMU avec l'appui scientifique
+                et technique du laboratoire <strong>Galou Xam-Xam</strong> ont effectué une visite d'étude
+                sur le site de Diakhanor dans le delta du Sine-Saloum.Cette activité pedagogique basée sur le 
+                modéle d'apprentissage par l'approche terrain a permis aux étudians de découvrir les principes 
+                d'une expérimentation en écophysiologie sur un bivalve (Senilia senilis) à l'aide banc de 
+                mesure écophysiologique,d'echantilloner et d'observer le plancton à l'aide d'un planktoscope,
+                un microscope open source pour observer et identifier les planctons
+            </p>
+            <p><strong>Date :</strong> Juin,Juillet 2025 </p>
+
+            <img src="{{ url_for('static', filename='images/sortie-pédagogique2.jpg') }}" alt="Lagune de Somone">
+            <p>
+                Ils ont entre autre effectué une école de terrain  déroulée dans la <strong>Lagune de Somone</strong>
+                un géosystéme naturel de mangrove situé sur la <strong>Petite Cote du Senegal</strong> en 
+                partenariat avec l'UFR des Sciences et Techniques de l'<strong>Université de Rouen Normandie</strong>. 
+                Cette école de terrain a été l'occasion d'explorer quelques thématiques clés telles que :
+                <li>La dynamique sédimentaire en milieu cotier</li>
+                <li>le forçage hydrodynamique </li>
+                <li>la distribution spatiale des espéces de mangrove</li>
+                <li>l'évolution spatiale des propriétés physico-chimiques et géochimiques</li>
+                <li>l'absence d'apports d'eau douce de la riviére de Somone comme facteurs aggravant le processus de l'hypersalinisation de la Lagune </li>
+                <li>les enjeux sur la preservation de cet écosystéme fragile , à forte valeur écologique et socio-économique</li>
+
+            </p>
+            <p><strong>Date :</strong>Décembre 2024</p>
+
+            <img src="{{ url_for('static', filename='images/sortie-pédagogique3.jpg') }}" alt="visite AIMS">
+            <p>
+                De meme que les étudiants en Licence 3 MAthématiques et Modelisation accompagnés par le Dr <strong> Thierno M.M SOW , Enseignant-Chercheur</strong> en <strong>Mathématiques Appliqées</strong>
+                ont effectué une sortie pedagogique à l'AIMS <strong>Institut Africain des Sciences Mathématiques</strong>.
+                Cette visite leur a permis de découvrir le cadre de formation de l'institut et d'échanger avec les étudiants
+                et les enseignants. Au cours de cette rencontre ils ont été informés des conditions
+                d'admission , des programmes de formation , des possibilités de bourses ainsi que différentes
+                opportinutés académiques et professionnelles offertes par l'AIMS.
+            </p>
+            <p>
+                Cette activité a été une expérience enrichissante en permettant aux étudiants
+                d'élargir leurs perspectives d'études et mieux préparer leurs parcours académiques
+                et professionnelles.
+            </p>
+            <p><strong>Date :</strong> Mai 2026</p>
+            
+
+
+
+
+        </div>
+
+    </section>
+{% endblock  %}
+    
