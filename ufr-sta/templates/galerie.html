@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="galerie">
+    <h1>Galerie Photos</h1>
+    <p class="intro">
+        Découvrez en images les moments marquants de la vie de l'UFR des Sciences et Technologies
+        Avancées: Conférences , projets , activites sportives et culturelles , sorties pédagogiques
+        cérémonies et bien plus encore
+    </p>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='images/amphi-rentree.jpg') }}" alt="Amphi de rentrée">
+        <h3>Amphie de rentrée</h3>
+        <p>Acceuil et Orientation des nouveaux bacheliers</p>
+        
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='images/salle-informatique.jpg') }}" alt="Salle Informatique">
+        <h3>Salle Informatique </h3>
+        <p>Un espace moderne mis à la disposition des étudiants pour mener à bien leurs travaux
+         pratiques , leurs projets et activités de recherche.
+        </p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='images/grande-conference.jpg') }}" alt="Grande conference">
+        <img src="{{ url_for('static', filename='images/conference2.jpg') }}" alt="Grande conference">
+        <h3>Grande Conférence de L'UFR</h3>
+        <p>Nos étudiants s'étaient tous réunis avec le Pr.Abdou SENE pour parler des Mathématiques
+            et leurs importances.
+        </p>
+
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='images/sortie1.jpg') }}" alt="SORTIE">
+        <img src="{{ url_for('static', filename='images/sortie2.jpg') }}" alt="SORTIE">
+        <img src="{{ url_for('static', filename='images/sortie3.jpg') }}" alt="SORTIE">
+        <img src="{{ url_for('static', filename='images/sortie.jpg') }}" alt="SORTIE">
+        <h3>Nos Sorties Pédagogiques</h3>
+        <p>Quelques images des visites pédagogiques effectuées par nos étudiants</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='images/équipe-ufr.jpg') }}" alt="Equipe">
+        <img src="{{ url_for('static', filename='images/supporters.jpg') }}" alt="Jour Match">
+        <img src="{{ url_for('static', filename='images/supporters1.jpg') }}" alt="Jour Match">
+        <h3>Tournoi Football</h3>
+        <p>Rencontres sportives organisées par les étudiants de l'UFR accompagnés par leurs enseignants</p>
+
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='images/excellence.jpg') }}" alt="Journee excellence">
+        <h3>Journée d'Excellence</h3>
+        <p>Journée pendant laquelle L'UFR cultive l'excellence</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='images/projets-iot.jpg') }}" alt="projets">
+        <h3>Présentation Projets IOT</h3>
+        <p>Quelques uns des projets réalisés par nos étudiants en licence 3 en Informatique</p>
+    </div>
+
+
+</section>
+    
+
+{% endblock %}
+    
