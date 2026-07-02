@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}UFR STA{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="/" class="logo">
+
+                <img src="{{ url_for('static', filename='images/Blue Pink Modern Circle Science Class Logo.jpg') }}" alt="Logo">
+
+                <div class="logo-text">
+
+                    <h2>UFR STA</h2>
+
+                    <span>Sciences et Technologies Avancées</span>
+
+                </div>
+
+            </a>
+
+            <ul class="nav-menu">
+
+                <li><a href="/">Accueil</a></li>
+
+                <li><a href="/departements">Départements</a></li>
+
+                <li><a href="/formations">Formations</a></li>
+
+                <li><a href="/actualites">Actualités</a></li>
+
+                <li><a href="/activites">Activités</a></li>
+
+                <li><a href="/galerie">Galerie</a></li>
+
+                <li><a href="/contact">Contact</a></li>
+
+            </ul>
+
+            <a href="#" class="login-btn">
+
+                <i class="fa-solid fa-user"></i>
+
+                Administration
+
+            </a>
+
+        </nav>
+
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>UFR STA</h3>
+
+                <p>
+                    Université Amadou Mahtar MBOW
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>Contact</h4>
+
+                <p>Dakar - Sénégal</p>
+
+                <p>contact@ufrsta.sn</p>
+
+            </div>
+
+            <div class="social">
+
+                <a href="#"><i class="fab fa-facebook"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

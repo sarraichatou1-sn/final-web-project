@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-line"></div>
+  <div class="hero-inner container">
+    <div class="hero-logo-wrap">
+      <img class="hero-logo" src="{{ url_for('static', filename='images/Logo.jpg') }}" alt="Logo UFR STA">
+    </div>
+    <p class="hero-eyebrow">Université Amadou Mahtar MBOW — Sénégal</p>
+    <h1>Former les <span class="hero-accent">ingénieurs</span><br>et chercheurs de demain</h1>
+    <p class="hero-desc">
+      L'UFR Sciences et Technologies Avancées propose des formations d'excellence
+      en Informatique, Mathématiques et Physique, ancrées dans les réalités du Sénégal.
+    </p>
+    <div class="hero-btns">
+      <a href="{{ url_for('formations') }}"   class="btn btn-primary">Découvrir nos formations</a>
+      <a href="{{ url_for('departements') }}" class="btn btn-ghost">Nos départements</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="stat-num">3</span><span class="stat-lbl">Départements</span></div>
+      <div class="hero-stat"><span class="stat-num">6+</span><span class="stat-lbl">Formations</span></div>
+      <div class="hero-stat"><span class="stat-num">500+</span><span class="stat-lbl">Étudiants</span></div>
+      <div class="hero-stat"><span class="stat-num">2026</span><span class="stat-lbl">Promotion</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="s-eyebrow">À propos</p>
+      <h2 class="section-title">L'UFR STA en bref</h2>
+      <p class="section-subtitle">Une unité pluridisciplinaire au cœur de la transformation numérique du Sénégal</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card card-feature">
+        <div class="card-icon">🎓</div>
+        <div class="card-body">
+          <h3 class="card-title">Formations de qualité</h3>
+          <p class="card-text">Licences et masters reconnus en Informatique, Mathématiques et Physique.</p>
+          <a href="{{ url_for('formations') }}" class="card-link">Voir les formations →</a>
+        </div>
+      </div>
+      <div class="card card-feature">
+        <div class="card-icon">🔬</div>
+        <div class="card-body">
+          <h3 class="card-title">Recherche active</h3>
+          <p class="card-text">Des laboratoires engagés dans l'innovation scientifique au service du pays.</p>
+          <a href="{{ url_for('departements') }}" class="card-link">En savoir plus →</a>
+        </div>
+      </div>
+      <div class="card card-feature">
+        <div class="card-icon">🤝</div>
+        <div class="card-body">
+          <h3 class="card-title">Partenariats</h3>
+          <p class="card-text">Collaborations avec les entreprises pour une formation professionnalisante.</p>
+          <a href="{{ url_for('contact') }}" class="card-link">Nous contacter →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOT DU DIRECTEUR -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="s-eyebrow">Direction</p>
+      <h2 class="section-title">Mot du Directeur</h2>
+    </div>
+    <div class="directeur-block">
+      <div class="directeur-head">
+        <div class="dir-avatar">
+          <img src="{{ url_for('static', filename='images/ID-COULIBALY.jpg') }}"
+               alt="Directeur"
+               onerror="this.style.display='none';this.parentElement.innerHTML='PD'">
+        </div>
+        <div>
+          <p class="dir-name">Dr. Alioune Coulibaly</p>
+          <p class="dir-role">Directeur de l'UFR Sciences et Technologies Avancées</p>
+        </div>
+      </div>
+      <div class="directeur-body">
+        <blockquote class="dir-quote">
+          « L'UFR STA s'engage à offrir une formation d'excellence, ancrée dans les réalités
+          du Sénégal et ouverte sur le monde. Notre objectif est de former des cadres compétents,
+          innovants et capables de contribuer au développement numérique et scientifique de notre pays. »
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DERNIÈRES ACTUALITÉS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="s-eyebrow">Actualités</p>
+      <h2 class="section-title">Dernières nouvelles</h2>
+      <p class="section-subtitle">Restez informé des événements de l'UFR</p>
+    </div>
+    {% if actualites %}
+    <div class="cards-grid">
+      {% for actu in actualites %}
+      <div class="card">
+        <div class="card-img-placeholder">
+          {% if actu.photo %}
+            <img class="card-img" src="{{ url_for('static', filename='images/' + actu.photo) }}" alt="{{ actu.titre }}" onerror="this.parentElement.innerHTML='<span class=card-img-icon>📰</span>'">
+          {% else %}
+            <span class="card-img-icon">📰</span>
+          {% endif %}
+        </div>
+        <div class="card-body">
+          {% if actu.categorie %}<span class="badge badge-rose">{{ actu.categorie }}</span>{% endif %}
+          <p class="card-date">{{ actu.date }}</p>
+          <h3 class="card-title">{{ actu.titre }}</h3>
+          <p class="card-text">{{ (actu.description or '')[:110] }}{% if actu.description and actu.description|length > 110 %}…{% endif %}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-2">
+      <a href="{{ url_for('actualites') }}" class="btn btn-outline">Toutes les actualités →</a>
+    </div>
+    {% else %}
+    <div class="empty-state"><p>📢</p><p>Aucune actualité pour le moment.</p></div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ACTIVITÉS RÉCENTES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="s-eyebrow">Vie de l'UFR</p>
+      <h2 class="section-title">Activités récentes</h2>
+      <p class="section-subtitle">Ce qui s'est passé sur le campus</p>
+    </div>
+    {% if activites %}
+    <div class="cards-grid">
+      {% for act in activites %}
+      <div class="card">
+        <div class="card-body">
+          <div class="actu-meta">
+            <span class="actu-date-badge">{{ act.date }}</span>
+            {% if act.lieu %}<span class="actu-lieu">📍 {{ act.lieu }}</span>{% endif %}
+          </div>
+          <h3 class="card-title mt-1">{{ act.titre }}</h3>
+          <p class="card-text">{{ (act.description or '')[:100] }}{% if act.description and act.description|length > 100 %}…{% endif %}</p>
+          <a href="{{ url_for('activite_detail', act_id=act.id) }}" class="card-link">Voir plus →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-2">
+      <a href="{{ url_for('activites') }}" class="btn btn-outline">Toutes les activités →</a>
+    </div>
+    {% else %}
+    <div class="empty-state"><p>🗓️</p><p>Aucune activité pour le moment.</p></div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-cta">
+  <div class="container">
+    <p class="s-eyebrow" style="color:rgba(255,255,255,.45)">Rejoindre l'UFR</p>
+    <h2>Vous souhaitez intégrer l'UFR STA ?</h2>
+    <p>Consultez nos formations et conditions d'admission.</p>
+    <div class="hero-btns" style="margin-top:1.75rem">
+      <a href="{{ url_for('formations') }}" class="btn btn-primary">Nos formations</a>
+      <a href="{{ url_for('contact') }}"    class="btn btn-ghost">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

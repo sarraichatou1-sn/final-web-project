@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Formations{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <h1>Nos Formations</h1>
+    <p>Des programmes adaptés aux besoins du marché sénégalais et international</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% if formations %}
+      {# Grouper par niveau #}
+      {% set licences = formations | selectattr('niveau', 'equalto', 'Licence') | list %}
+      {% set masters  = formations | selectattr('niveau', 'equalto', 'Master')  | list %}
+
+      {% if licences %}
+      <div class="section-head">
+        <p class="s-eyebrow">Niveau Bac+3</p>
+        <h2 class="section-title">Licences</h2>
+      </div>
+      <div class="cards-grid" style="margin-bottom:3rem">
+        {% for f in licences %}
+        <div class="card formation-card">
+          <div class="card-body">
+            <span class="formation-niveau niveau-licence">Licence — 3 ans</span>
+            <h3 class="card-title">{{ f.nom }}</h3>
+            {% if f.departement_nom %}<p class="card-date">🏫 {{ f.departement_nom }}</p>{% endif %}
+            {% if f.conditions_admission %}<p class="card-text" style="margin-top:.5rem"><strong>Admission :</strong> {{ f.conditions_admission }}</p>{% endif %}
+            {% if f.debouches %}<p class="card-text"><strong>Débouchés :</strong> {{ f.debouches }}</p>{% endif %}
+            <a href="{{ url_for('formation_detail', formation_id=f.id) }}" class="card-link">Voir le programme →</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if masters %}
+      <div class="section-head">
+        <p class="s-eyebrow">Niveau Bac+5</p>
+        <h2 class="section-title">Masters</h2>
+      </div>
+      <div class="cards-grid">
+        {% for f in masters %}
+        <div class="card formation-card">
+          <div class="card-body">
+            <span class="formation-niveau niveau-master">Master — 2 ans</span>
+            <h3 class="card-title">{{ f.nom }}</h3>
+            {% if f.departement_nom %}<p class="card-date">🏫 {{ f.departement_nom }}</p>{% endif %}
+            {% if f.conditions_admission %}<p class="card-text" style="margin-top:.5rem"><strong>Admission :</strong> {{ f.conditions_admission }}</p>{% endif %}
+            {% if f.debouches %}<p class="card-text"><strong>Débouchés :</strong> {{ f.debouches }}</p>{% endif %}
+            <a href="{{ url_for('formation_detail', formation_id=f.id) }}" class="card-link">Voir le programme →</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    {% else %}
+    <div class="empty-state"><p>📚</p><p>Aucune formation enregistrée.</p></div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

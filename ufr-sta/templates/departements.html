@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Départements{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <h1>Nos Départements</h1>
+    <p>Trois pôles d'excellence scientifique et technologique</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% if departements %}
+    <div class="cards-grid">
+      {% set emojis = ['💻','📐','⚗️','🧬','📡','🧮'] %}
+      {% for dep in departements %}
+      <div class="dep-card">
+        <div class="dep-head">
+          <span class="dep-emoji">{{ emojis[loop.index0 % emojis|length] }}</span>
+          <p class="dep-name">{{ dep.nom }}</p>
+          {% if dep.responsable %}<p class="dep-resp">{{ dep.responsable }}</p>{% endif %}
+        </div>
+        <div class="dep-body">
+          {% if dep.description %}<p style="font-size:.88rem;color:var(--muted);margin-bottom:.85rem;line-height:1.6">{{ dep.description }}</p>{% endif %}
+          {% set formations = [] %}
+          <ul>
+            <li class="dep-row"><span class="dep-dot"></span>Licence {{ dep.nom }}</li>
+            <li class="dep-row"><span class="dep-dot"></span>Master {{ dep.nom }}</li>
+          </ul>
+          {% if dep.contact %}
+          <p style="font-size:.8rem;color:var(--muted);margin-top:.75rem">📧 {{ dep.contact }}</p>
+          {% endif %}
+          <a href="{{ url_for('departement_detail', dep_id=dep.id) }}" class="dep-link">Voir le département →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state"><p>🏫</p><p>Aucun département enregistré.</p></div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
