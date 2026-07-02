@@ -1,59 +1,33 @@
-/* =====================================================
-   UFR STA — style.css
-   Palette : Cyan (#0097a7) + Rose (#e91e8c)
-   
-   TABLE DES MATIÈRES
-   ──────────────────
-   1.  Variables & Reset
-   2.  Utilitaires généraux
-   3.  Header & Navigation
-   4.  Messages flash
-   5.  Hero (page d'accueil)
-   6.  Boutons
-   7.  Sections & titres
-   8.  Cartes (cards)
-   9.  Mot du Directeur
-   10. Départements
-   11. Formations & Programmes
-   12. Footer
-   13. Pages intérieures (page-hero)
-   14. Administration — layout
-   15. Administration — composants
-===================================================== */
-
-
-/* =====================================================
-   1. VARIABLES & RESET
-===================================================== */
+/* VARIABLES & RESET */
 
 :root {
-  /* Couleurs principales tirées du logo */
-  --cyan:        #0097a7;   /* turquoise principal */
-  --cyan-dark:   #006978;   /* turquoise foncé */
-  --cyan-deep:   #004d5c;   /* turquoise très foncé */
-  --cyan-light:  #e0f7fa;   /* turquoise clair (fonds) */
-  --rose:        #e91e8c;   /* rose vif (accents) */
-  --rose-light:  #fce4f3;   /* rose clair (fonds) */
+  
+  --cyan:        #0097a7;   
+  --cyan-dark:   #006978;   
+  --cyan-deep:   #004d5c;   
+  --cyan-light:  #e0f7fa;   
+  --rose:        #e91e8c;   
+  --rose-light:  #fce4f3;   
 
-  /* Couleurs neutres */
-  --texte:       #0d2b30;   /* texte principal */
-  --muted:       #4a7a82;   /* texte secondaire */
-  --surface:     #f0fbfc;   /* fond sections alternées */
-  --bord:        rgba(0, 151, 167, 0.15); /* bordures */
+  
+  --texte:       #0d2b30;   
+  --muted:       #4a7a82;   
+  --surface:     #f0fbfc;   
+  --bord:        rgba(0, 151, 167, 0.15); 
   --blanc:       #ffffff;
 
-  /* Ombres */
+  
   --ombre-sm:    0 1px 4px rgba(0, 0, 0, 0.07);
   --ombre:       0 4px 18px rgba(0, 151, 167, 0.10);
   --ombre-lg:    0 10px 36px rgba(0, 151, 167, 0.15);
 
-  /* Rayons & transitions */
+  
   --r:           10px;
   --r-lg:        16px;
   --tr:          0.22s ease;
 }
 
-/* Reset minimal */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -81,11 +55,9 @@ img { max-width: 100%; display: block; }
 ul  { list-style: none; }
 
 
-/* =====================================================
-   2. UTILITAIRES GÉNÉRAUX
-===================================================== */
+/*  UTILITAIRES GÉNÉRAUX */
 
-/* Conteneur centré */
+
 .container {
   width: 100%;
   max-width: 1120px;
@@ -97,10 +69,10 @@ ul  { list-style: none; }
 .mt-1        { margin-top: 0.75rem; }
 .mt-2        { margin-top: 1.5rem; }
 
-/* Zone principale — assez haute pour que le footer ne remonte pas */
+
 .main-content { min-height: 60vh; }
 
-/* État vide (aucun contenu en base) */
+
 .empty-state {
   text-align: center;
   padding: 3rem 1rem;
@@ -111,7 +83,7 @@ ul  { list-style: none; }
   margin-bottom: 0.5rem;
 }
 
-/* Badge (étiquette colorée inline) */
+
 .badge {
   display: inline-block;
   padding: 0.2rem 0.65rem;
@@ -124,9 +96,7 @@ ul  { list-style: none; }
 .badge-rose { background: var(--rose-light); color: var(--rose); border: 1px solid rgba(233,30,140,.2); }
 
 
-/* =====================================================
-   3. HEADER & NAVIGATION
-===================================================== */
+/* HEADER & NAVIGATION */
 
 .site-header {
   background: linear-gradient(90deg, var(--cyan-deep), var(--cyan-dark));
@@ -144,7 +114,7 @@ ul  { list-style: none; }
   gap: 1rem;
 }
 
-/* Logo + nom */
+
 .logo-zone { display: flex; align-items: center; gap: 0.75rem; }
 
 .logo {
@@ -168,7 +138,7 @@ ul  { list-style: none; }
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Bouton burger (mobile) */
+
 .burger {
   display: block;
   background: none;
@@ -180,7 +150,7 @@ ul  { list-style: none; }
   padding: 0.3rem 0.65rem;
 }
 
-/* Liens de navigation — mobile : colonne cachée */
+
 .nav-links {
   display: none;
   flex-direction: column;
@@ -202,36 +172,14 @@ ul  { list-style: none; }
 .nav-links li a:hover  { background: rgba(255, 255, 255, 0.12); color: var(--blanc); }
 .nav-links li a.active { background: rgba(233, 30, 140, 0.25);  color: var(--blanc); font-weight: 700; }
 
-/* Desktop : liens en ligne */
+
 @media (min-width: 860px) {
   .burger    { display: none; }
   .nav-links { display: flex !important; flex-direction: row; width: auto; padding: 0; }
 }
 
 
-/* =====================================================
-   4. MESSAGES FLASH
-===================================================== */
-
-.flash-container { padding: 0.75rem 1.25rem; }
-
-.flash {
-  padding: 0.7rem 1rem;
-  border-radius: var(--r);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  font-size: 0.88rem;
-}
-
-.flash-success { background: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
-.flash-danger  { background: #fee2e2; color: #991b1b; border-left: 4px solid #ef4444; }
-.flash-warning { background: #fef3c7; color: #92400e; border-left: 4px solid #f59e0b; }
-.flash-info    { background: var(--cyan-light); color: var(--cyan-deep); border-left: 4px solid var(--cyan); }
-
-
-/* =====================================================
-   5. HERO (PAGE D'ACCUEIL)
-===================================================== */
+/*  HERO (PAGE D'ACCUEIL) */
 
 .hero {
   position: relative;
@@ -241,14 +189,33 @@ ul  { list-style: none; }
   text-align: center;
 }
 
-/* Fond dégradé radial */
+
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 85% 65% at 50% 0%, #00838f 0%, var(--cyan-deep) 70%);
+
+  
+  background-image: url('../images/STA_image2.jpg');
+  background-size: cover;
+  background-position: center;
+
+
 }
 
-/* Cercles décoratifs flottants */
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 77, 92, 0.82) 0%,     
+    rgba(0, 105, 120, 0.75) 50%,  
+    rgba(0, 77, 92, 0.85) 100%    
+  );
+}
+
+
 .hero-orb1 {
   position: absolute;
   right: -80px; top: -80px;
@@ -264,7 +231,7 @@ ul  { list-style: none; }
   background: radial-gradient(circle, rgba(0, 151, 167, 0.18) 0%, transparent 70%);
 }
 
-/* Ligne colorée en haut du hero */
+
 .hero-line {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -272,10 +239,10 @@ ul  { list-style: none; }
   background: linear-gradient(90deg, transparent, var(--rose), var(--cyan), transparent);
 }
 
-/* Tout le contenu passe devant les décors */
+
 .hero-inner { position: relative; z-index: 1; }
 
-/* Logo centré dans le hero */
+
 .hero-logo-wrap { display: flex; justify-content: center; margin-bottom: 1.5rem; }
 .hero-logo {
   width: 110px; height: 110px;
@@ -285,7 +252,7 @@ ul  { list-style: none; }
   box-shadow: 0 0 40px rgba(233, 30, 140, 0.3), 0 0 80px rgba(0, 151, 167, 0.2);
 }
 
-/* Petite étiquette au-dessus du titre */
+
 .hero-eyebrow {
   display: inline-block;
   background: rgba(233, 30, 140, 0.15);
@@ -308,7 +275,7 @@ ul  { list-style: none; }
   margin-bottom: 1rem;
 }
 
-/* Mot mis en valeur dans le titre */
+
 .hero-accent {
   background: linear-gradient(135deg, var(--rose), #ff80ab);
   -webkit-background-clip: text;
@@ -323,7 +290,7 @@ ul  { list-style: none; }
   line-height: 1.75;
 }
 
-/* Rangée de boutons */
+
 .hero-btns {
   display: flex;
   flex-wrap: wrap;
@@ -333,7 +300,7 @@ ul  { list-style: none; }
   position: relative; z-index: 1;
 }
 
-/* Barre de statistiques en bas du hero */
+
 .hero-stats {
   display: flex;
   flex-wrap: wrap;
@@ -370,9 +337,7 @@ ul  { list-style: none; }
 }
 
 
-/* =====================================================
-   6. BOUTONS
-===================================================== */
+/*  BOUTONS */
 
 .btn {
   display: inline-block;
@@ -386,7 +351,7 @@ ul  { list-style: none; }
 }
 .btn:hover { transform: translateY(-2px); }
 
-/* Bouton principal : rose dégradé */
+
 .btn-primary {
   background: linear-gradient(135deg, var(--rose), #c2185b);
   color: var(--blanc);
@@ -396,7 +361,7 @@ ul  { list-style: none; }
   color: var(--blanc);
 }
 
-/* Bouton transparent sur fond foncé */
+
 .btn-ghost {
   background: transparent;
   color: var(--blanc);
@@ -404,7 +369,7 @@ ul  { list-style: none; }
 }
 .btn-ghost:hover { background: rgba(255, 255, 255, 0.12); color: var(--blanc); }
 
-/* Bouton contour cyan */
+
 .btn-outline {
   background: transparent;
   color: var(--cyan);
@@ -412,7 +377,7 @@ ul  { list-style: none; }
 }
 .btn-outline:hover { background: var(--cyan); color: var(--blanc); }
 
-/* Bouton contour rose */
+
 .btn-rose-outline {
   background: transparent;
   color: var(--rose);
@@ -421,14 +386,12 @@ ul  { list-style: none; }
 .btn-rose-outline:hover { background: var(--rose); color: var(--blanc); }
 
 
-/* =====================================================
-   7. SECTIONS & TITRES
-===================================================== */
+/*  SECTIONS & TITRES*/
 
 .section     { padding: 5rem 1.25rem; }
 .section-alt { background: var(--surface); }
 
-/* Section CTA (fond foncé) */
+
 .section-cta {
   background: linear-gradient(135deg, var(--cyan-deep), var(--cyan-dark));
   color: var(--blanc);
@@ -437,7 +400,7 @@ ul  { list-style: none; }
   overflow: hidden;
 }
 .section-cta::before {
-  /* Halo décoratif centré */
+  
   content: '';
   position: absolute;
   left: 50%; top: 50%;
@@ -450,10 +413,10 @@ ul  { list-style: none; }
 .section-cta h2 { color: var(--blanc); }
 .section-cta p  { color: rgba(255, 255, 255, 0.65); max-width: 500px; margin: 0.75rem auto 0; }
 
-/* En-tête de section centré */
+
 .section-head { text-align: center; margin-bottom: 3rem; }
 
-/* Sous-titre coloré au-dessus du titre de section */
+
 .s-eyebrow {
   display: inline-block;
   color: var(--rose);
@@ -470,7 +433,7 @@ ul  { list-style: none; }
   color: var(--texte);
 }
 
-/* Trait décoratif sous le titre */
+
 .section-title::after {
   content: '';
   display: block;
@@ -489,9 +452,7 @@ ul  { list-style: none; }
 }
 
 
-/* =====================================================
-   8. CARTES (CARDS)
-===================================================== */
+/* CARDS */
 
 /* Grille responsive : 1 col → 2 → 3 */
 .cards-grid {
@@ -502,7 +463,7 @@ ul  { list-style: none; }
 @media (min-width: 560px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 860px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
 
-/* Carte de base */
+
 .card {
   background: var(--blanc);
   border: 1px solid var(--bord);
@@ -515,7 +476,7 @@ ul  { list-style: none; }
   transition: transform var(--tr), box-shadow var(--tr);
 }
 
-/* Trait dégradé en haut de chaque carte */
+
 .card::before {
   content: '';
   position: absolute;
@@ -526,11 +487,11 @@ ul  { list-style: none; }
 
 .card:hover { transform: translateY(-5px); box-shadow: var(--ombre-lg); }
 
-/* Carte horizontale (icône à gauche) */
+
 .card-feature { flex-direction: row; align-items: flex-start; }
 .card-icon    { font-size: 1.6rem; padding: 1.4rem 1rem 1.4rem 1.4rem; flex-shrink: 0; }
 
-/* Contenu de la carte */
+
 .card-body { padding: 1.4rem; flex: 1; }
 .card-feature .card-body { padding: 1.4rem 1.4rem 1.4rem 0; }
 
@@ -540,7 +501,7 @@ ul  { list-style: none; }
 .card-link:hover { color: var(--rose); }
 .card-date  { font-size: 0.78rem; color: var(--cyan); font-weight: 600; margin-bottom: 0.3rem; }
 
-/* Placeholder image en haut de carte */
+
 .card-img-placeholder {
   height: 160px;
   background: linear-gradient(135deg, var(--cyan-deep), var(--cyan));
@@ -564,9 +525,7 @@ ul  { list-style: none; }
 .actu-lieu { font-size: 0.78rem; color: var(--muted); }
 
 
-/* =====================================================
-   9. MOT DU DIRECTEUR
-===================================================== */
+/*  MOT DU DIRECTEUR */
 
 .directeur-block {
   max-width: 820px;
@@ -578,7 +537,7 @@ ul  { list-style: none; }
   border: 1px solid var(--bord);
 }
 
-/* En-tête bleue avec avatar */
+
 .directeur-head {
   background: linear-gradient(135deg, var(--cyan-deep), var(--cyan));
   padding: 2rem;
@@ -607,7 +566,7 @@ ul  { list-style: none; }
 .dir-name { color: var(--blanc); font-weight: 800; font-size: 1.05rem; margin-bottom: 0.2rem; }
 .dir-role { color: rgba(255, 255, 255, 0.6); font-size: 0.82rem; }
 
-/* Citation avec bordure rose */
+
 .directeur-body { padding: 1.75rem 2rem; }
 .dir-quote {
   font-style: italic;
@@ -619,9 +578,7 @@ ul  { list-style: none; }
 }
 
 
-/* =====================================================
-   10. DÉPARTEMENTS
-===================================================== */
+/*  DÉPARTEMENTS */
 
 .dep-card {
   border-radius: var(--r-lg);
@@ -632,7 +589,7 @@ ul  { list-style: none; }
 }
 .dep-card:hover { transform: translateY(-5px); box-shadow: var(--ombre-lg); }
 
-/* En-tête colorée du département */
+
 .dep-head {
   background: linear-gradient(135deg, var(--cyan-deep), var(--cyan));
   padding: 2rem;
@@ -640,7 +597,7 @@ ul  { list-style: none; }
   position: relative;
 }
 .dep-head::after {
-  /* Trait rose en bas */
+  
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -652,10 +609,10 @@ ul  { list-style: none; }
 .dep-name  { color: var(--blanc); font-size: 1.1rem; font-weight: 800; }
 .dep-resp  { color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; margin-top: 0.3rem; }
 
-/* Corps blanc du département */
+
 .dep-body { background: var(--blanc); padding: 1.4rem; }
 
-/* Ligne de formation dans un département */
+
 .dep-row {
   display: flex;
   align-items: center;
@@ -667,7 +624,7 @@ ul  { list-style: none; }
 }
 .dep-row:last-child { border-bottom: none; }
 
-/* Petit point dégradé devant chaque ligne */
+
 .dep-dot {
   width: 7px; height: 7px;
   border-radius: 50%;
@@ -675,7 +632,7 @@ ul  { list-style: none; }
   flex-shrink: 0;
 }
 
-/* Lien "Voir le département" */
+
 .dep-link {
   display: block;
   margin-top: 1rem;
@@ -691,11 +648,9 @@ ul  { list-style: none; }
 .dep-link:hover { background: var(--cyan); color: var(--blanc); border-color: var(--cyan); }
 
 
-/* =====================================================
-   11. FORMATIONS & PROGRAMMES
-===================================================== */
+/*  FORMATIONS & PROGRAMMES */
 
-/* Badge niveau (Licence / Master) */
+
 .formation-niveau {
   display: inline-block;
   padding: 0.2rem 0.7rem;
@@ -707,7 +662,7 @@ ul  { list-style: none; }
 .niveau-licence { background: var(--cyan-light); color: var(--cyan-dark); }
 .niveau-master  { background: var(--rose-light); color: var(--rose); }
 
-/* Grille des semestres */
+
 .programme-grid {
   display: grid;
   gap: 1.2rem;
@@ -715,7 +670,7 @@ ul  { list-style: none; }
 }
 @media (min-width: 560px) { .programme-grid { grid-template-columns: 1fr 1fr; } }
 
-/* Bloc d'un semestre */
+
 .semestre-block {
   background: var(--blanc);
   border-radius: var(--r);
@@ -744,7 +699,7 @@ ul  { list-style: none; }
 }
 .semestre-body li:last-child { border-bottom: none; }
 
-/* Petit point devant chaque module */
+
 .semestre-body li::before {
   content: '';
   width: 6px; height: 6px;
@@ -754,9 +709,7 @@ ul  { list-style: none; }
 }
 
 
-/* =====================================================
-   12. FOOTER
-===================================================== */
+/*  FOOTER */
 
 .site-footer { background: #001a20; }
 
@@ -799,11 +752,9 @@ ul  { list-style: none; }
 }
 
 
-/* =====================================================
-   13. PAGES INTÉRIEURES (bandeau d'en-tête)
-===================================================== */
+/*  PAGES INTÉRIEURES  */
 
-/* Bandeau coloré en haut de chaque page (hors accueil) */
+
 .page-hero {
   background: linear-gradient(135deg, var(--cyan-deep), var(--cyan));
   color: var(--blanc);
@@ -813,7 +764,7 @@ ul  { list-style: none; }
   overflow: hidden;
 }
 
-/* Trait rose en haut du bandeau */
+
 .page-hero::before {
   content: '';
   position: absolute;
@@ -826,17 +777,15 @@ ul  { list-style: none; }
 .page-hero p  { opacity: 0.7; max-width: 500px; margin: 0 auto; }
 
 
-/* =====================================================
-   14. ADMINISTRATION — LAYOUT
-===================================================== */
+/*  ADMINISTRATION — LAYOUT */
 
-/* Deux colonnes : sidebar fixe + contenu */
+
 .admin-layout {
   display: flex;
   min-height: 100vh;
 }
 
-/* Sidebar gauche */
+
 .admin-sidebar {
   width: 220px;
   flex-shrink: 0;
@@ -845,14 +794,14 @@ ul  { list-style: none; }
   padding: 1.5rem 0;
 }
 
-/* Zone logo en haut de la sidebar */
+
 .admin-sidebar .sidebar-logo {
   padding: 1rem 1.25rem 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 0.75rem;
 }
 
-/* Titre de groupe dans la sidebar */
+
 .admin-sidebar .sidebar-title {
   font-size: 0.72rem;
   font-weight: 700;
@@ -864,7 +813,7 @@ ul  { list-style: none; }
   margin-top: 0.5rem;
 }
 
-/* Liens de la sidebar */
+
 .admin-sidebar a {
   display: block;
   color: rgba(255, 255, 255, 0.7);
@@ -875,7 +824,7 @@ ul  { list-style: none; }
 .admin-sidebar a:hover  { background: rgba(255, 255, 255, 0.1); color: var(--blanc); }
 .admin-sidebar a.active { background: rgba(255, 255, 255, 0.1); color: var(--blanc); }
 
-/* Zone de contenu principal */
+
 .admin-main {
   flex: 1;
   padding: 2rem;
@@ -884,11 +833,8 @@ ul  { list-style: none; }
 }
 
 
-/* =====================================================
-   15. ADMINISTRATION — COMPOSANTS
-===================================================== */
+/*  ADMINISTRATION — COMPOSANTS */
 
-/* Carte blanche de contenu admin */
 .admin-card {
   background: var(--blanc);
   border-radius: var(--r-lg);
@@ -898,7 +844,7 @@ ul  { list-style: none; }
   border: 1px solid var(--bord);
 }
 
-/* Titre de section dans l'admin */
+
 .admin-title {
   font-size: 1.3rem;
   font-weight: 800;
@@ -906,7 +852,7 @@ ul  { list-style: none; }
   margin-bottom: 1.25rem;
 }
 
-/* Grille de statistiques */
+
 .stat-grid {
   display: grid;
   gap: 1rem;
@@ -914,16 +860,16 @@ ul  { list-style: none; }
   margin-bottom: 2rem;
 }
 
-/* Carte de statistique individuelle */
+
 .stat-card {
   background: var(--blanc);
   border-radius: var(--r);
   padding: 1.25rem;
   box-shadow: var(--ombre-sm);
-  border-top: 3px solid var(--cyan);  /* trait cyan par défaut */
+  border-top: 3px solid var(--cyan);  
   text-align: center;
 }
-.stat-card.rose { border-color: var(--rose); }  /* variante rose */
+.stat-card.rose { border-color: var(--rose); }  
 
 .stat-card .num { font-size: 2rem; font-weight: 900; color: var(--cyan); }
 .stat-card.rose .num { color: var(--rose); }
@@ -976,7 +922,7 @@ tr:hover td { background: var(--cyan-light); }
 }
 .form-group textarea { min-height: 120px; resize: vertical; }
 
-/* Petits boutons dans les tableaux */
+
 .btn-sm {
   padding: 0.35rem 0.8rem;
   font-size: 0.8rem;
