@@ -42,7 +42,7 @@
     </div>
     <div class="cards-grid">
       <div class="card card-feature">
-        <div class="card-icon">🎓</div>
+        <div class="card-icon"></div>
         <div class="card-body">
           <h3 class="card-title">Formations de qualité</h3>
           <p class="card-text">Licences et masters reconnus en Informatique, Mathématiques et Physique.</p>
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="card card-feature">
-        <div class="card-icon">🔬</div>
+        <div class="card-icon"></div>
         <div class="card-body">
           <h3 class="card-title">Recherche active</h3>
           <p class="card-text">Des laboratoires engagés dans l'innovation scientifique au service du pays.</p>
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="card card-feature">
-        <div class="card-icon">🤝</div>
+        <div class="card-icon"></div>
         <div class="card-body">
           <h3 class="card-title">Partenariats</h3>
           <p class="card-text">Collaborations avec les entreprises pour une formation professionnalisante.</p>
@@ -90,9 +90,12 @@
       </div>
       <div class="directeur-body">
         <blockquote class="dir-quote">
-          « L'UFR STA s'engage à offrir une formation d'excellence, ancrée dans les réalités
-          du Sénégal et ouverte sur le monde. Notre objectif est de former des cadres compétents,
-          innovants et capables de contribuer au développement numérique et scientifique de notre pays. »
+          Chers étudiants, chers enseignants, chers partenaires et chers visiteurs,
+            C’est avec un immense plaisir que je vous souhaite la bienvenue sur le site officiel de l’Unité de Formation et de Recherche en Sciences et Technologies Avancées (UFR-STA) de l’UAM.
+            Notre UFR a pour vocation de former des professionnels hautement qualifiés, capables de répondre aux défis scientifiques, technologiques et numériques d’aujourd’hui et de demain. Nous nous engageons à offrir un enseignement de qualité, fondé sur l’excellence académique, l’innovation, la recherche et l’ouverture sur le monde professionnel.
+            À travers nos différents départements et nos programmes de formation, nous mettons tout en œuvre pour développer les compétences, l’esprit critique et la créativité de nos étudiants, afin qu’ils deviennent des acteurs du développement économique et social du Sénégal et de l’Afrique.
+            Je vous invite à parcourir ce site pour découvrir nos formations, nos activités de recherche, nos projets ainsi que les nombreuses opportunités offertes par notre UFR.
+            Au nom de toute l’équipe de l’UFR-STA, je vous remercie de votre visite et vous souhaite une excellente découverte. »
         </blockquote>
       </div>
     </div>
@@ -113,7 +116,7 @@
       <div class="card">
         <div class="card-img-placeholder">
           {% if actu.photo %}
-            <img class="card-img" src="{{ url_for('static', filename='images/' + actu.photo) }}" alt="{{ actu.titre }}" onerror="this.parentElement.innerHTML='<span class=card-img-icon>📰</span>'">
+            <img class="card-img" src="{{ url_for('static', filename='images/STA_image1.jpg') }}" alt="{{ actu.titre }}" onerror="this.parentElement.innerHTML='<span class=card-img-icon>📰</span>'">
           {% else %}
             <span class="card-img-icon">📰</span>
           {% endif %}
@@ -155,7 +158,7 @@
           </div>
           <h3 class="card-title mt-1">{{ act.titre }}</h3>
           <p class="card-text">{{ (act.description or '')[:100] }}{% if act.description and act.description|length > 100 %}…{% endif %}</p>
-          <a href="{{ url_for('activite_detail', act_id=act.id) }}" class="card-link">Voir plus →</a>
+          <a href="{{ url_for('activites') }}" class="card-link">Voir plus →</a>
         </div>
       </div>
       {% endfor %}
