@@ -1,99 +1,177 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% block title %}Enseignants{% endblock %}
 
 {% block content %}
-<section class="enseignants">
+
+<!-- BANDEAU D'EN-TÊTE -->
+<div class="page-hero">
+  <div class="container">
     <h1>Nos Enseignants</h1>
-    <p class="introductif">
-        L'UFR des Sciences et Technologies Avancées dispose d'une équipe d'enseignants-chercheurs
-        qualifiés , engagés dans la formation des étudiants et le développement de la recherche scientifique
-
+    <p>
+      L'UFR des Sciences et Technologies Avancées dispose d'une équipe
+      d'enseignants-chercheurs qualifiés, engagés dans la formation des étudiants
+      et le développement de la recherche scientifique.
     </p>
-    <div class="Enseignant">
-        <img src="{{ url_for('static', filename='images/enseignant1.jpg') }}" alt="Enseignant">
-        <h2>Dr.Alioune COULIBALY</h2>
-        <p>Directeur de L'UFR Sciences et Technologies Avancées</p>
-        <p><strong>Grade :</strong>Maitre de Conférence Titulaire - Enseignant-Chercheur</p>
-        <p><strong>Spécialité :</strong>Mathématiques appliquées</p>
-        <p>Thématiques de recherche</p>
-        <li>Equations aux dérivées partielles</li>
-        <li>Analyse fonctionnelle</li>
-        <li>Probabilité - Statistique</li>
-        <li>Systémes dynamiques</li>
-        <li>Calcul stochastique</li>
-        <p><strong>Email :</strong>alioune.coulibaly@uam.edu.sn</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="cards-grid">
+
+      <!-- ── Enseignant 1 ── -->
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img"
+               src="{{ url_for('static', filename='images/enseignant1.jpg') }}"
+               alt="Dr. Alioune COULIBALY"
+               onerror="this.parentElement.innerHTML='<span class=card-img-icon>👨‍🏫</span>'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dr. Alioune COULIBALY</h2>
+          <p class="card-date">Directeur de l'UFR STA</p>
+          <p class="card-text"><strong>Grade :</strong> Maître de Conférence Titulaire</p>
+          <p class="card-text"><strong>Spécialité :</strong> Mathématiques appliquées</p>
+          <ul style="margin:.75rem 0 .75rem 1.2rem; color:var(--muted); font-size:.85rem; line-height:1.9">
+            <li>Équations aux dérivées partielles</li>
+            <li>Analyse fonctionnelle</li>
+            <li>Probabilité - Statistique</li>
+            <li>Systèmes dynamiques</li>
+            <li>Calcul stochastique</li>
+          </ul>
+          <a href="mailto:alioune.coulibaly@uam.edu.sn" class="card-link">
+             alioune.coulibaly@uam.edu.sn
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Enseignant 2 ── -->
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img"
+               src="{{ url_for('static', filename='images/enseignant2.jpg') }}"
+               alt="Pr. Amadou Dahirou GUEYE"
+               onerror="this.parentElement.innerHTML='<span class=card-img-icon>👨‍🏫</span>'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Pr. Amadou Dahirou GUEYE</h2>
+          <p class="card-date">Vice-Recteur chargé des Affaires pédagogiques</p>
+          <p class="card-text"><strong>Grade :</strong> Professeur Titulaire</p>
+          <p class="card-text"><strong>Spécialité :</strong> Informatique</p>
+          <ul style="margin:.75rem 0 .75rem 1.2rem; color:var(--muted); font-size:.85rem; line-height:1.9">
+            <li>Télé-laboratoire et Organisations virtuelles</li>
+            <li>Télé-enseignement</li>
+            <li>Intelligence artificielle appliquée à la santé et l'éducation</li>
+            <li>Internet des Objets et Cloud</li>
+          </ul>
+          <a href="mailto:dahirou.gueye@uam.edu.sn" class="card-link">
+             dahirou.gueye@uam.edu.sn
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Enseignant 3 ── -->
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img"
+               src="{{ url_for('static', filename='images/enseignant3.jpg') }}"
+               alt="Dr. Thierno M. M. SOW"
+               onerror="this.parentElement.innerHTML='<span class=card-img-icon>👨‍🏫</span>'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dr. Thierno M. M. SOW</h2>
+          <p class="card-date">Chef du département MIM</p>
+          <p class="card-text"><strong>Grade :</strong> Maître de Conférence Titulaire</p>
+          <p class="card-text"><strong>Spécialité :</strong> Mathématiques appliquées</p>
+          <ul style="margin:.75rem 0 .75rem 1.2rem; color:var(--muted); font-size:.85rem; line-height:1.9">
+            <li>Analyse non linéaire</li>
+            <li>Géométrie des espaces de Banach</li>
+            <li>Optimisation et méthodes itératives</li>
+            <li>Analyse Fonctionnelle</li>
+            <li>Calcul des Variations</li>
+          </ul>
+          <a href="mailto:thierno.sow@uam.edu.sn" class="card-link">
+             thierno.sow@uam.edu.sn
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Enseignant 4 ── -->
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img"
+               src="{{ url_for('static', filename='images/enseignant4.jpg') }}"
+               alt="Dr. Makha NDAO"
+               onerror="this.parentElement.innerHTML='<span class=card-img-icon>👨‍🏫</span>'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dr. Makha NDAO</h2>
+          <p class="card-date">Chef du département SMU</p>
+          <p class="card-text"><strong>Grade :</strong> Maître de Conférence Titulaire</p>
+          <p class="card-text"><strong>Spécialité :</strong> Physique — Milieux Denses et Matériaux</p>
+          <ul style="margin:.75rem 0 .75rem 1.2rem; color:var(--muted); font-size:.85rem; line-height:1.9">
+            <li>Biomasse et stockage d'énergie</li>
+            <li>Polymères et élastomères pour industrie</li>
+            <li>Séparation des phases fluides</li>
+            <li>Pollution marine par les microplastiques</li>
+            <li>Qualité des eaux et traitements</li>
+          </ul>
+          <a href="mailto:makha.ndao@uam.edu.sn" class="card-link">
+             makha.ndao@uam.edu.sn
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Enseignant 5 ── -->
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img"
+               src="{{ url_for('static', filename='images/enseignant5.jpg') }}"
+               alt="Dr. Siny NDOYE"
+               onerror="this.parentElement.innerHTML='<span class=card-img-icon>👨‍🏫</span>'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dr. Siny NDOYE</h2>
+          <p class="card-text"><strong>Grade :</strong> Maître de Conférence Titulaire</p>
+          <p class="card-text"><strong>Spécialité :</strong> Océanographie et Applications</p>
+          <ul style="margin:.75rem 0 .75rem 1.2rem; color:var(--muted); font-size:.85rem; line-height:1.9">
+            <li>Dynamique Océanique</li>
+            <li>Dynamique de l'Upwelling côtier Ouest Africain</li>
+            <li>Pollution marine et émissaire en mer</li>
+            <li>Changement Climatique et Événements extrêmes</li>
+            <li>Modélisation hydrodynamique marine et côtière</li>
+          </ul>
+          <a href="mailto:siny.ndoye@uam.edu.sn" class="card-link">
+             siny.ndoye@uam.edu.sn
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Enseignant 6 ── -->
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img"
+               src="{{ url_for('static', filename='images/enseignant6.jpg') }}"
+               alt="Pr. Issa SAKHO"
+               onerror="this.parentElement.innerHTML='<span class=card-img-icon>👨‍🏫</span>'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Pr. Issa SAKHO</h2>
+          <p class="card-text"><strong>Grade :</strong> Professeur assimilé</p>
+          <p class="card-text"><strong>Spécialité :</strong> Géosciences marines et littorales</p>
+          <ul style="margin:.75rem 0 .75rem 1.2rem; color:var(--muted); font-size:.85rem; line-height:1.9">
+            <li>Forçages météo-océaniques et risques littoraux</li>
+            <li>Transfert de matières dans les hydro-systèmes</li>
+            <li>Dynamique des écosystèmes de carbone bleu</li>
+          </ul>
+          <a href="mailto:issa.sakho@uam.edu.sn" class="card-link">
+             issa.sakho@uam.edu.sn
+          </a>
+        </div>
+      </div>
 
     </div>
-    <div class="Enseignant">
-        <img src="{{ url_for('static', filename='images/enseignant2.jpg') }}" alt="Enseignant">
-        <h2>Pr.Amadou Dahirou GUEYE</h2>
-        <P>Vice-Recteur chargé des Affaires pédagogiques et de la vie Universitaire </P>
-        <p><strong>Grade :</strong>Professeur Titulaire - Enseignant-Chercheur</p>
-        <p><strong>Spécialité :</strong> Informatique</p>
-        <p>Thématiques de recherche</p>
-        <li>Télé laboratoire et Organisations virtuelles </li>
-        <li>Télé-enseignement</li>
-        <li>Intelligence artificielle appliquée à la santé , la sécurité routiére ,l'éducation et l'environnement</li>
-        <li>Internet des Objects et Cloud</li>
-        <p><strong>Email :</strong>dahirou.gueye@uam.edu.sn</p>
-
-    </div>
-    <div class="Enseignant">
-        <img src="{{ url_for('static', filename='images/enseignant3.jpg') }}" alt="Enseignant">
-        <h2>Dr.Thierno Mohamadane Mansour SOW</h2>
-        <p>Chef de département Mathématiques Informatique et modélisation (MIM)</p>
-        <p><strong>Grade :</strong>Maitre de Conférence Titulaire - Enseignant-Chercheur</p>
-        <p><strong>Spécialité :</strong>Mathématiques appliquées</p>
-        <p>Thématiques de recherche</p>
-        <li>Analyse non linéaire</li>
-        <li>Géométrie des espaces de Banach</li>
-        <li>Optimisation et méthodes itératives</li>
-        <li>Analyse Fonctionnelle</li>
-        <li>Calcul des Variations</li>
-        <p><strong>Email :</strong>thierno.sow@uam.edu.sn</p>
-
-    </div>
-    <div class="Enseignant">
-        <img src="{{ url_for('static', filename='images/enseignant4.jpg') }}" alt="Enseignant">
-        <h2>Dr.Makha NDAO</h2>
-        <p>Chef de département Sciences de la Mer et de l'Univers (SMU)</p>
-        <p><strong>Grade :</strong>Maitre de Conférence Titulaire - Enseignant-Chercheur en Nanosciences Nanotechnologie Matériaux </p>
-        <p><strong>Spécialité :</strong>Physique : MILIEUX DENSES ET MATERIAUX</p>
-        <p>Thématiques de recherche</p>
-        <li>Biomasse et stockage d'énergie et traitement des eaux</li>
-        <li>Polyméres et élastoméres pour industrie</li>
-        <li>Séparation des phases fluides (Simulation numérique et expériences)</li>
-        <li>Pollution marine par les microplastiques</li>
-        <li>Qualité des eaux et traitements ( Osmose inverse , Nanofiltration ,ultrafiltration ,Microfiltration)</li>
-        <li>Diffusion de la Chaleur</li>
-        <p><strong>Email :</strong>makha.ndao@uam.edu.sn</p>
-
-    </div>
-    <div class="Enseignant">
-        <img src="{{ url_for('static', filename='images/enseignant5.jpg') }}" alt="Enseignant">
-        <h2>Dr.Siny NDOYE</h2>
-        <p><strong>Grade :</strong>Maitre de Conférence Titulaire - Enseignant-Chercheur</p>
-        <p><strong>Spécialité :</strong>Physique : Océanographie et Applications</p>
-        <p>Thématiques de recherche</p>
-        <li>Dynamique Océanique ( hydrodynamique des fluides géophysiques)</li>
-        <li>Dynamique del'Upwelling cotier Ouest Africain</li>
-        <li>Pollution marine et dimensionnement d'émissaire en mer</li>
-        <li>Changement Climatique et Evénements extremes (impact du changement Climatique sur la dynamique océanique)</li>
-        <li>Modélisation hydrodynamique de l'environnement marin et cotier</li>
-        <p><strong>Email :</strong>siny.ndoye@uam.edu.sn</p>
-    </div>
-    <div class="Enseignant">
-        <img src="{{ url_for('static', filename='images/enseignant6.jpg') }}" alt="Enseignant">
-        <h2>Pr.Issa SAKHO</h2>
-        <p><strong>Grade :</strong>Professeur assimilé - Enseignant-Chercheur</p>
-        <p><strong>Spécialité :</strong>Géosciences marines et littorales</p>
-        <p>Dynamique physique des systémes sédimentaux littoraux</p>
-        <li>Forçages météo-océaniques,Risques littoraux et infrastructures de protection cotiére(SD et SFN)</li>
-        <li>Transfert de matiéres (eau,sédiment,dissout)dans les grands hydro-systémes:de la source à la mer </li>
-        <li>Dynamique et Fonctionnement des écosystémes de carbone bleu : mangroves et herbiers marins</li>
-        <p><strong>Email :</strong>issa.sakho@uam.edu.sn</p>
-    </div>
-
+  </div>
 </section>
-    
-{% endblock  %}
-    
+
+{% endblock %}
