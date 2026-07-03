@@ -30,7 +30,7 @@
             {% if f.departement_nom %}<p class="card-date">🏫 {{ f.departement_nom }}</p>{% endif %}
             {% if f.conditions_admission %}<p class="card-text" style="margin-top:.5rem"><strong>Admission :</strong> {{ f.conditions_admission }}</p>{% endif %}
             {% if f.debouches %}<p class="card-text"><strong>Débouchés :</strong> {{ f.debouches }}</p>{% endif %}
-            <a href="{{ url_for('formation_detail', formation_id=f.id) }}" class="card-link">Voir le programme →</a>
+            
           </div>
         </div>
         {% endfor %}
@@ -51,7 +51,7 @@
             {% if f.departement_nom %}<p class="card-date">🏫 {{ f.departement_nom }}</p>{% endif %}
             {% if f.conditions_admission %}<p class="card-text" style="margin-top:.5rem"><strong>Admission :</strong> {{ f.conditions_admission }}</p>{% endif %}
             {% if f.debouches %}<p class="card-text"><strong>Débouchés :</strong> {{ f.debouches }}</p>{% endif %}
-            <a href="{{ url_for('formation_detail', formation_id=f.id) }}" class="card-link">Voir le programme →</a>
+            
           </div>
         </div>
         {% endfor %}
