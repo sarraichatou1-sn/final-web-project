@@ -1,54 +1,127 @@
 {% extends "base.html" %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
-<section class="contact">
-    <h1>Contactez-nous!!</h1>
-    <p class="intro">
-        Souhaitez-vous obtenir des informations sur nos formations , nos départements ou nos
-        activités ? Notre équipe est à votre entiére disposition pour répondre à toutes vos
-        questions 
 
+<!-- BANDEAU D'EN-TÊTE -->
+<div class="page-hero">
+  <div class="container">
+    <h1>Contactez-nous !</h1>
+    <p>
+      Souhaitez-vous obtenir des informations sur nos formations, nos départements ou nos
+      activités ? Notre équipe est à votre entière disposition pour répondre à toutes vos questions.
     </p>
-    <div class="contact-container">
-        <h2>Nos Coordonnées</h2>
-        <p>📍<strong>Adresse :</strong> <br>
-         Université Amadou Mahtar MBOW(UAM) <br>
-        Rue 21x20,2éme Arrondissement,Pole Urbain de Diamnadio-BP:45927 Dakar NAFA VDN Dakar,Senegal</p>
-        <p>📞<strong>Téléphone :</strong> +221 33 844 10 00</p>
-        <P>📧<strong>Email :</strong>uam@uam.edu.sn</P>
-        <p>🕘<strong>Horaire d'Ouverture :</strong><br>
-          Lundi-Vendredi <br>
-          08h00-17h00</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Grille 2 colonnes : coordonnées / formulaire -->
+    <div style="display:grid;gap:1.75rem;grid-template-columns:1fr" class="contact-layout">
+
+      <!-- COORDONNÉES -->
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title" style="font-size:1.1rem"> Nos coordonnées</h2>
+
+          <div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:1.1rem">
+
+            <div>
+              <p style="font-weight:700;color:var(--texte);font-size:.88rem"> Adresse</p>
+              <p class="card-text" style="margin-top:.3rem">
+                Université Amadou Mahtar MBOW (UAM)<br>
+                Rue 21x20, 2ème Arrondissement, Pôle Urbain de Diamniadio<br>
+                BP : 45927 Dakar NAFA VDN, Dakar, Sénégal
+              </p>
+            </div>
+
+            <div>
+              <p style="font-weight:700;color:var(--texte);font-size:.88rem"> Téléphone</p>
+              <p class="card-text" style="margin-top:.3rem">
+                <a href="tel:+221338441000">+221 33 844 10 00</a>
+              </p>
+            </div>
+
+            <div>
+              <p style="font-weight:700;color:var(--texte);font-size:.88rem">Email</p>
+              <p class="card-text" style="margin-top:.3rem">
+                <a href="mailto:uam@uam.edu.sn">uam@uam.edu.sn</a>
+              </p>
+            </div>
+
+            <div>
+              <p style="font-weight:700;color:var(--texte);font-size:.88rem">Horaires d'ouverture</p>
+              <p class="card-text" style="margin-top:.3rem">
+                Lundi – Vendredi<br>08h00 – 16h00
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title" style="font-size:1.1rem"> Envoyez-nous un message</h2>
+
+          <form method="POST" style="margin-top:1.25rem">
+
+            <div class="form-group">
+              <label>Nom complet *</label>
+              <input type="text" name="nom" placeholder="Votre nom et prénom" required>
+            </div>
+
+            <div class="form-group">
+              <label>Adresse e-mail *</label>
+              <input type="email" name="email" placeholder="vous@exemple.com" required>
+            </div>
+
+            <div class="form-group">
+              <label>Sujet</label>
+              <input type="text" name="sujet" placeholder="Objet de votre message">
+            </div>
+
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea name="message" rows="6" placeholder="Votre message…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%">
+              Envoyer le message
+            </button>
+
+          </form>
+        </div>
+      </div>
+
     </div>
-    <div class="contact-form">
-        <h2>Envoyez-nous un message</h2>
-        <form >
-            <input type="text" placeholder="Nom" required>
-            <input type="text" placeholder="Prénom" required>
-            <input type="email" placeholder="Adresse-Email" required>
-            <input type="text" placeholder="Sujet" required>
-            <textarea rows="6" placeholder="Votre message..." required></textarea>
-            <button type="submit">Envoyer votre message</button>
 
-        </form>
-
-    </div>
-    <div class="map">
-        <h2>Notre localisation</h2>
-
-        <p>
-          📍 Université Amadou Mahtar Mbow (UAM), Diamniadio, Sénégal
-       </p>
-
+    <!-- LOCALISATION -->
+    <div class="card" style="margin-top:1.75rem">
+      <div class="card-body text-center">
+        <h2 class="card-title" style="font-size:1.1rem"> Notre localisation</h2>
+        <p class="card-text" style="margin-top:.5rem">
+           Université Amadou Mahtar Mbow (UAM), Diamniadio, Sénégal
+        </p>
         <a href="https://www.google.com/maps/search/?api=1&query=Université+Amadou+Mahtar+Mbow+Diamniadio"
-   target="_blank"
-   class="btn-map">
-    Ouvrir Google Maps
+           target="_blank" rel="noopener"
+           class="btn btn-outline mt-2">
+          Ouvrir dans Google Maps →
         </a>
-
+      </div>
     </div>
 
+  </div>
 </section>
-    
-{% endblock  %}
+
+<style>
+  /* Coordonnées + formulaire côte à côte sur grand écran */
+  @media (min-width: 860px) {
+    .contact-layout { grid-template-columns: 1fr 1.3fr !important; }
+  }
+</style>
+
+{% endblock %}
     
