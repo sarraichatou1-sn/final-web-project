@@ -31,7 +31,6 @@
           {% if dep.contact %}
           <p style="font-size:.8rem;color:var(--muted);margin-top:.75rem">📧 {{ dep.contact }}</p>
           {% endif %}
-          <a href="{{ url_for('departement_detail', dep_id=dep.id) }}" class="dep-link">Voir le département →</a>
         </div>
       </div>
       {% endfor %}
