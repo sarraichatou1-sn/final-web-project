@@ -1,0 +1,41 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem">
+    <h2 class="admin-title" style="margin:0">📚 Formations</h2>
+    <a href="{{ url_for('admin_formation_ajouter') }}" class="btn btn-primary">+ Ajouter</a>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Nom</th><th>Niveau</th><th>Département</th><th>Durée</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        {% for f in formations %}
+        <tr>
+          <td><strong>{{ f.nom }}</strong></td>
+          <td>
+            <span class="formation-niveau {{ 'niveau-master' if f.niveau == 'Master' else 'niveau-licence' }}">
+              {{ f.niveau }}
+            </span>
+          </td>
+          <td>{{ f.departement_nom or '—' }}</td>
+          <td>{{ f.duree or '—' }}</td>
+          <td style="display:flex;gap:.5rem">
+            <a href="{{ url_for('admin_formation_modifier', formation_id=f.id) }}" class="btn-sm btn-edit">Modifier</a>
+            <a href="{{ url_for('admin_formation_supprimer', formation_id=f.id) }}" class="btn-sm btn-del"
+               onclick="return confirm('Supprimer ?')">Supprimer</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+{% endblock %}

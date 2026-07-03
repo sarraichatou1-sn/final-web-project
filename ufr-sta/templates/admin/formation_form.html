@@ -1,0 +1,61 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <h2 class="admin-title">{{ 'Modifier' if formation else 'Ajouter' }} une formation</h2>
+
+  <form method="POST">
+
+    <div class="form-group">
+      <label>Nom de la formation *</label>
+      <input type="text" name="nom" value="{{ formation.nom if formation else '' }}"
+             placeholder="Ex : Licence Informatique" required>
+    </div>
+
+    <div class="form-group">
+      <label>Niveau *</label>
+      <select name="niveau" required>
+        <option value="Licence" {{ 'selected' if formation and formation.niveau == 'Licence' }}>Licence</option>
+        <option value="Master"  {{ 'selected' if formation and formation.niveau == 'Master' }}>Master</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Département</label>
+      <select name="departement_id">
+        <option value="">— Choisir —</option>
+        {% for dep in departements %}
+        <option value="{{ dep.id }}" {{ 'selected' if formation and formation.departement_id == dep.id }}>
+          {{ dep.nom }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Durée</label>
+      <input type="text" name="duree" value="{{ formation.duree if formation else '' }}" placeholder="Ex : 3 ans">
+    </div>
+
+    <div class="form-group">
+      <label>Conditions d'admission</label>
+      <textarea name="conditions_admission" placeholder="Bac scientifique…">{{ formation.conditions_admission if formation else '' }}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Débouchés</label>
+      <textarea name="debouches" placeholder="Développeur, Analyste…">{{ formation.debouches if formation else '' }}</textarea>
+    </div>
+
+    <div style="display:flex;gap:1rem;margin-top:1rem">
+      <button type="submit" class="btn btn-primary">{{ 'Modifier' if formation else 'Ajouter' }}</button>
+      <a href="{{ url_for('admin_formations') }}" class="btn btn-outline">Annuler</a>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <!-- Titre + bouton ajouter -->
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem">
+    <h2 class="admin-title" style="margin:0">🖼 Albums photos</h2>
+    <a href="{{ url_for('admin_album_ajouter') }}" class="btn btn-primary">+ Créer un album</a>
+  </div>
+
+  <!-- Liste des albums -->
+  <table>
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Année</th>
+        <th>Photos</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for album in albums %}
+      <tr>
+        <td><strong>{{ album.titre }}</strong></td>
+        <td>{{ album.annee or '—' }}</td>
+
+        <!-- Bouton pour gérer les photos de cet album -->
+        <td>
+          <a href="{{ url_for('admin_album_photos', album_id=album.id) }}" class="btn-sm btn-edit">
+            Voir les photos
+          </a>
+        </td>
+
+        <!-- Modifier / Supprimer -->
+        <td style="display:flex; gap:0.5rem">
+          <a href="{{ url_for('admin_album_modifier', album_id=album.id) }}" class="btn-sm btn-edit">
+            Modifier
+          </a>
+          <a href="{{ url_for('admin_album_supprimer', album_id=album.id) }}" class="btn-sm btn-del"
+             onclick="return confirm('Supprimer cet album ?')">
+            Supprimer
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

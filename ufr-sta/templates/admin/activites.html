@@ -1,0 +1,37 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem">
+    <h2 class="admin-title" style="margin:0">🗓 Activités</h2>
+    <a href="{{ url_for('admin_activite_ajouter') }}" class="btn btn-primary">+ Ajouter</a>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Titre</th><th>Date</th><th>Lieu</th><th>Organisateur</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        {% for a in activites %}
+        <tr>
+          <td><strong>{{ a.titre }}</strong></td>
+          <td>{{ a.date }}</td>
+          <td>{{ a.lieu or '—' }}</td>
+          <td>{{ a.organisateur or '—' }}</td>
+          <td style="display:flex;gap:.5rem">
+            <a href="{{ url_for('admin_activite_modifier', act_id=a.id) }}" class="btn-sm btn-edit">Modifier</a>
+            <a href="{{ url_for('admin_activite_supprimer', act_id=a.id) }}" class="btn-sm btn-del"
+               onclick="return confirm('Supprimer cette activité ?')">Supprimer</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+{% endblock %}

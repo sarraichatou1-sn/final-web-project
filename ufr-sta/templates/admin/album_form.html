@@ -1,0 +1,43 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <h2 class="admin-title">
+    {{ 'Modifier' if album else 'Créer' }} un album
+  </h2>
+
+  <!-- Formulaire : POST envoie les données à Flask -->
+  <form method="POST">
+
+    <div class="form-group">
+      <label>Titre *</label>
+      <input type="text" name="titre" value="{{ album.titre if album else '' }}" required>
+    </div>
+
+    <div class="form-group">
+      <label>Année</label>
+      <input type="number" name="annee" value="{{ album.annee if album else '' }}">
+    </div>
+
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" name="date" value="{{ album.date if album else '' }}">
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea name="description">{{ album.description if album else '' }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      {{ 'Enregistrer' if album else 'Créer' }}
+    </button>
+    <a href="{{ url_for('admin_galerie') }}" class="btn btn-outline">Annuler</a>
+
+  </form>
+
+</div>
+
+{% endblock %}

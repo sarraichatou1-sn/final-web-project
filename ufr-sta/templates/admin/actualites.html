@@ -1,0 +1,36 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem">
+    <h2 class="admin-title" style="margin:0">📰 Actualités</h2>
+    <a href="{{ url_for('admin_actualite_ajouter') }}" class="btn btn-primary">+ Ajouter</a>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Titre</th><th>Catégorie</th><th>Date</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        {% for a in actualites %}
+        <tr>
+          <td><strong>{{ a.titre }}</strong></td>
+          <td>{% if a.categorie %}<span class="badge badge-rose">{{ a.categorie }}</span>{% else %}—{% endif %}</td>
+          <td>{{ a.date }}</td>
+          <td style="display:flex;gap:.5rem">
+            <a href="{{ url_for('admin_actualite_modifier', actu_id=a.id) }}" class="btn-sm btn-edit">Modifier</a>
+            <a href="{{ url_for('admin_actualite_supprimer', actu_id=a.id) }}" class="btn-sm btn-del"
+               onclick="return confirm('Supprimer cette actualité ?')">Supprimer</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+{% endblock %}

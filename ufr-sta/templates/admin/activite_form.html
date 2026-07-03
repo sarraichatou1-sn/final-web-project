@@ -1,0 +1,48 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <h2 class="admin-title">{{ 'Modifier' if act else 'Ajouter' }} une activité</h2>
+
+  <form method="POST">
+
+    <div class="form-group">
+      <label>Titre de l'activité *</label>
+      <input type="text" name="titre" value="{{ act.titre if act else '' }}"
+             placeholder="Ex : Atelier IA Générative" required>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+      <div class="form-group">
+        <label>Date *</label>
+        <input type="date" name="date" value="{{ act.date if act else '' }}" required>
+      </div>
+      <div class="form-group">
+        <label>Lieu</label>
+        <input type="text" name="lieu" value="{{ act.lieu if act else '' }}" placeholder="Ex : Salle Informatique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Organisateur</label>
+      <input type="text" name="organisateur" value="{{ act.organisateur if act else '' }}"
+             placeholder="Ex : Département Informatique">
+    </div>
+
+    <div class="form-group">
+      <label>Description complète</label>
+      <textarea name="description" placeholder="Décrivez l'activité en détail…">{{ act.description if act else '' }}</textarea>
+    </div>
+
+    <div style="display:flex;gap:1rem;margin-top:1rem">
+      <button type="submit" class="btn btn-primary">{{ 'Enregistrer' if act else 'Publier' }}</button>
+      <a href="{{ url_for('admin_activites') }}" class="btn btn-outline">Annuler</a>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}

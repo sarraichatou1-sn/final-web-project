@@ -1,0 +1,91 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<!-- Titre -->
+<div style="margin-bottom:1.5rem">
+  <h1 style="font-size:1.4rem; font-weight:900; color:var(--texte)">
+    Bonjour, {{ session.admin_username }} 
+  </h1>
+  <p style="color:var(--muted); margin-top:0.3rem">
+    Tableau de bord — UFR STA
+  </p>
+</div>
+
+<!-- STATISTIQUES -->
+<div class="stat-grid">
+
+  <div class="stat-card">
+    <div class="num">{{ stats.departements }}</div>
+    <div class="lbl">Départements</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="num">{{ stats.formations }}</div>
+    <div class="lbl">Formations</div>
+  </div>
+
+  <div class="stat-card rose">
+    <div class="num">{{ stats.actualites }}</div>
+    <div class="lbl">Actualités</div>
+  </div>
+
+  <div class="stat-card rose">
+    <div class="num">{{ stats.activites }}</div>
+    <div class="lbl">Activités</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="num">{{ stats.albums }}</div>
+    <div class="lbl">Albums</div>
+  </div>
+
+  <div class="stat-card rose">
+    <div class="num">{{ stats.messages }}</div>
+    <div class="lbl">Messages</div>
+  </div>
+
+</div>
+
+<!-- ACTIONS RAPIDES -->
+<div class="admin-card">
+  <h2 class="admin-title"> Actions rapides</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:0.75rem">
+    <a href="{{ url_for('admin_departement_ajouter') }}" class="btn btn-outline">+ Département</a>
+    <a href="{{ url_for('admin_formation_ajouter') }}"   class="btn btn-outline">+ Formation</a>
+    <a href="{{ url_for('admin_actualite_ajouter') }}"   class="btn btn-rose-outline">+ Actualité</a>
+    <a href="{{ url_for('admin_activite_ajouter') }}"    class="btn btn-rose-outline">+ Activité</a>
+    <a href="{{ url_for('admin_album_ajouter') }}"       class="btn btn-outline">+ Album photo</a>
+  </div>
+</div>
+
+<!-- DERNIERS MESSAGES -->
+{% if derniers_messages %}
+<div class="admin-card">
+  <h2 class="admin-title">Derniers messages</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Sujet</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for msg in derniers_messages %}
+        <tr>
+          <td>{{ msg.nom }}</td>
+          <td>{{ msg.email }}</td>
+          <td>{{ msg.sujet or '—' }}</td>
+          <td>{{ msg.date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

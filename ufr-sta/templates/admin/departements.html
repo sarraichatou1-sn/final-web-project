@@ -1,0 +1,43 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <!-- Titre + bouton ajouter -->
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem">
+    <h2 class="admin-title" style="margin:0">🏫 Départements</h2>
+    <a href="{{ url_for('admin_departement_ajouter') }}" class="btn btn-primary">+ Ajouter</a>
+  </div>
+
+  <!-- Tableau -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Responsable</th>
+          <th>Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dep in departements %}
+        <tr>
+          <td><strong>{{ dep.nom }}</strong></td>
+          <td>{{ dep.responsable or '—' }}</td>
+          <td>{{ dep.contact or '—' }}</td>
+          <td style="display:flex; gap:0.5rem">
+            <a href="{{ url_for('admin_departement_modifier', dep_id=dep.id) }}" class="btn-sm btn-edit">Modifier</a>
+            <a href="{{ url_for('admin_departement_supprimer', dep_id=dep.id) }}" class="btn-sm btn-del"
+               onclick="return confirm('Supprimer ce département ?')">Supprimer</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+{% endblock %}

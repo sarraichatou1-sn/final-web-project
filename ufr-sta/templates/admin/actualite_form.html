@@ -1,0 +1,55 @@
+{% extends "admin/base_admin.html" %}
+
+{% block admin_content %}
+
+<div class="admin-card">
+
+  <h2 class="admin-title">{{ 'Modifier' if actu else 'Ajouter' }} une actualité</h2>
+
+  <form method="POST">
+
+    <div class="form-group">
+      <label>Titre *</label>
+      <input type="text" name="titre" value="{{ actu.titre if actu else '' }}"
+             placeholder="Ex : Séminaire IA — Juin 2026" required>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+      <div class="form-group">
+        <label>Date *</label>
+        <input type="date" name="date" value="{{ actu.date if actu else '' }}" required>
+      </div>
+      <div class="form-group">
+        <label>Catégorie</label>
+        <select name="categorie">
+          <option value="">— Choisir —</option>
+          <option value="Séminaire">Séminaire</option>
+          <option value="Conférence">Conférence</option>
+          <option value="Soutenance">Soutenance</option>
+          <option value="Appel à candidature">Appel à candidature</option>
+          <option value="Résultats">Résultats</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea name="description" placeholder="Détails de l'actualité…">{{ actu.description if actu else '' }}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Photo (nom du fichier dans static/images/)</label>
+      <input type="text" name="photo" value="{{ actu.photo if actu else '' }}" placeholder="ex: seminaire.jpg">
+    </div>
+
+    <div style="display:flex;gap:1rem;margin-top:1rem">
+      <button type="submit" class="btn btn-primary">{{ 'Enregistrer' if actu else 'Publier' }}</button>
+      <a href="{{ url_for('admin_actualites') }}" class="btn btn-outline">Annuler</a>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}

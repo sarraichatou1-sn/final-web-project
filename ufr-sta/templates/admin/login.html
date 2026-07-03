@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin — UFR STA</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="login-wrap">
+  <div class="login-card">
+
+    
+    <div class="login-logo">
+      <img src="{{ url_for('static', filename='images/Logo.jpg') }}" alt="Logo">
+    </div>
+
+    
+    <h1>Administration</h1>
+    <p>Connectez-vous pour continuer</p>
+
+
+
+    
+    <form method="POST">
+
+      <div class="form-group">
+        <label>Identifiant</label>
+        <input type="text" name="username" placeholder="admin" required>
+      </div>
+
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" name="password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%">
+        Se connecter
+      </button>
+
+    </form>
+
+    
+    <p style="text-align:center; margin-top:1rem">
+      <a href="{{ url_for('index') }}">← Retour au site</a>
+    </p>
+
+  </div>
+</div>
+
+</body>
+</html>
