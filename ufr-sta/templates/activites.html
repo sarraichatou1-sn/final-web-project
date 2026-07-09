@@ -5,7 +5,7 @@
     <div class="container">
         <h1>Les Activités de l'UFR</h1>
         <p>
-             L'UFR des Siences et Technologies Avancées organise réguliérement des activités 
+            L'UFR des Siences et Technologies Avancées organise réguliérement des activités 
             académiques , scientifiques , culturelles et sportives afin de renforcer les 
             compétences de ses étudiants et aussi favoriser leur développement personnel
         </p>
@@ -17,6 +17,8 @@
             <div class="card-img-placeholder" style="height: 260px;">
                 <img class="card-img"
                  src="{{ url_for('static', filename='images/conference2.jpg') }}"
+                 alt="Grande Conférence de L'UFR">
+                <img class="card-img"
                  src="{{ url_for('static', filename='images/conference3.jpg') }}"
                  alt="Grande Conférence de L'UFR">
             </div>
@@ -53,31 +55,37 @@
                 <div class="card-img-placeholder" style="height: 260px;">
                     <img class="card-img"
                     src="{{ url_for('static', filename='images/projets-iot1.jpg') }}"
+                    alt="Atelier IoT">
+                    <img class="card-img"
                     src="{{ url_for('static', filename='images/projets-iot2.jpg') }}"
-                    src="{{ url_for('static', filename='images/projets-iot3.jpg') }}"
+                    alt="Atelier IoT">
+                    <img class="card-img"
                     src="{{ url_for('static', filename='images/projets-iot4.jpg') }}"
-                   src="{{ url_for('static', filename='images/projets-iot5.jpg') }}"
-                   src="{{ url_for('static', filename='images/projets-iot6.jpg') }}"
-                   src="{{ url_for('static', filename='images/projets-iot7.jpg') }}" 
+                    alt="Atelier IoT">
+                    <img class="card-img"
+                    src="{{ url_for('static', filename='images/projets-iot6.jpg') }}"
+                    alt="Atelier IoT">
+                    <img class="card-img"
+                    src="{{ url_for('static', filename='images/projets-iot7.jpg') }}"
                     alt="Atelier IoT">
                 </div>
                 <div class="card-body">
                     <div class="actu-meta">
                         <span class="actu-date-badge">19 mai 2026</span>
-                        <span class="actu-lieu">Bobliotheque Universitaire-ODC</span>
+                        <span class="actu-lieu">Bibliotheque Universitaire-ODC</span>
 
                     </div>
                     <h2 class="card-title" style="font-size: 1.5rem; margin-top: .5rem;">Atelier de presentation
                         des projets IoT
                     </h2>
                     <p class="card-text" style="margin-top: .75rem;">
-                        Les étudiants de le licence 3 en Informatique ont présenté leurs projets <strong>IOT</strong>
+                        Les étudiants de la licence 3 en Informatique ont présenté leurs projets <strong>IOT</strong>
                         devant leur professeur , le <strong>CSA</strong> Mr <strong>Aidara Ngom</strong> et leurs camarades
                         Cette activité a permis de mettre en valeur les compétences acquises durant leur formation à
                         travers des solutions technologiques innovantes.
                     </p>
                     <p class="card-text" style="margin-top: .75rem;">
-                        Au cours de cette présentation , plusieurs projets innovants ont été exposé, illustrant les 
+                        Au cours de cette présentation , plusieurs projets innovants ont été exposés , illustrant les 
                         compétences techniques et la créativité des étudiants. Parmis ces réalisations on peut citer :
                     </p>
                     <ul style="margin: .75rem 0.75rem 1.2rem; color: var(--muted); font-size: .87rem;
@@ -90,8 +98,8 @@
                     </ul>
                     <p class="card-text">
                         Cette présentation a permis à nos étudiants de pouvoir mettre en pratique ce qu'ils ont appris 
-                        en classe de pouvoir stimuler leur capacité  aussi d'améliorer leur compétence en communication
-                        et en travail d'équipe
+                        en classe de pouvoir stimuler leur capacité d'améliorer leur compétence en communication
+                        et en travail d'équipe.
                     </p>
                 </div>
             </div>
@@ -99,14 +107,17 @@
                 <div class="card-img-placeholder" style="height: 260px;">
                     <img class="card-img"
                      src="{{ url_for('static', filename='images/equipe-ufr.jpg') }}" 
-                     src="{{ url_for('static', filename='images/supporters.jpg') }}"
-                     src="{{ url_for('static', filename='images/supporters1.jpg') }}"
-                      src="{{ url_for('static', filename='images/joueurs.jpg') }}"
+                     alt="Activites sportives et culturelles">
+                    <img class="card-img"
+                     src="{{ url_for('static', filename='images/supporters.jpg') }}" 
+                     alt="Activites sportives et culturelles">
+                   <img class="card-img"
+                     src="{{ url_for('static', filename='images/joueurs.jpg') }}" 
                      alt="Activites sportives et culturelles">
                 </div>
                 <div class="card-body">
                     <div class="actu-meta">
-                        <span class="actu-date-badge"> Decembre 2025</span>
+                        <span class="actu-date-badge"> Décembre 2025</span>
                         <span class="actu-lieu">Annexe de Stade Abdoulaye Wade</span>
 
                     </div>
@@ -116,7 +127,7 @@
                         Des rencontres sportives entre filiére ou parfois entre département sont organisées par les
                         étudiants au sein de l'UFR.
                         Ces rencontres offrent egalement des moments de détente et de convivialité favorisant
-                        leur épanouissement physique et social
+                        leur épanouissement physique et social.
                     </p>
                     <p>
                         Nous assistons aussi à des matchs de Génie en Herbe souvent organisés par l'Amicale des étudiants
@@ -129,21 +140,26 @@
             </div>
             <div class="section-head" style="margin-top: 3rem;">
                 <p class="s-eyebrow">Terrain</p>
-                <h2 class="section-title">Quelques sorties pedagogiques de l'UFR</h2>
+                <h2 class="section-title">Quelques sorties pédagogiques de l'UFR</h2>
             </div>
             <div class="card" style="margin-bottom: 2rem;">
                 <div class="card-img-placeholder" style="height: 260px;">
                     <img class="card-img"
                      src="{{ url_for('static', filename='images/Delta1.jpg') }}" 
-                      src="{{ url_for('static', filename='images/Delta2.jpg') }}" 
-                      src="{{ url_for('static', filename='images/Delta3.jpg') }}" 
+                     alt="Delta du Sine-Saloum">
+                    <img class="card-img"
+                     src="{{ url_for('static', filename='images/Delta2.jpg') }}" 
+                     alt="Delta du Sine-Saloum">
+                    <img class="card-img"
+                     src="{{ url_for('static', filename='images/Delta3.jpg') }}" 
                      alt="Delta du Sine-Saloum">
                 </div> 
+
                 <div class="card-body">
                     <div class="actu-meta">
                         <span class="actu-date-badge"> Juin 2025</span>
                     </div>
-                    <h3 class="card-title" style="margin-top: .5rem;">Delta du Sine-Saloum - SML</h3>
+                    <h3 class="card-title" style="margin-top: .5rem;">Visite du Delta du Sine-Saloum </h3>
                     <p class="card-text" style="margin-top: .75rem;">
                         Dans le but de consolider les aspects théoriques vue en classe les étudiants en licence 2
                         Sciences de la Mer et du Littoral(SML) accompagnés par le <Strong>Dr Siny Ndoye</Strong>
@@ -160,16 +176,20 @@
             <div class="card" style="margin-bottom: 2rem;">
                 <div class="card-img-placeholder" style="height: 260px;">
                     <img class="card-img"
-                     src="{{ url_for('static', filename='images/sortie2.jpg') }}" 
-                     src="{{ url_for('static', filename='images/sortie3.jpg') }}" 
-                     src="{{ url_for('static', filename='images/sortie4.jpg') }}" 
+                     src="{{ url_for('static', filename='images/sortie2.jpg') }}"
+                     alt="Lagune de Somone">
+                    <img class="card-img"
+                     src="{{ url_for('static', filename='images/sortie3.jpg') }}"
+                     alt="Lagune de Somone">
+                    <img class="card-img"
+                     src="{{ url_for('static', filename='images/sortie4.jpg') }}"
                      alt="Lagune de Somone">
                 </div>
                  <div class="card-body">
                     <div class="actu-meta">
                         <span class="actu-date-badge"> Decembre 2025</span>
                     </div>
-                    <h3 class="card-title" style="margin-top: .5rem;">Ecole de terrain-Lagune de somone</h3>
+                    <h3 class="card-title" style="margin-top: .5rem;">Ecole de terrain Lagune de somone</h3>
                     <p>
                         Ils ont entre autre effectué une école de terrain  déroulée dans la <strong>Lagune de Somone</strong>
                         un géosystéme naturel de mangrove situé sur la <strong>Petite Cote du Senegal</strong> en 
@@ -189,11 +209,11 @@
                 </div>
                   <div class="card-body">
                     <div class="actu-meta">
-                        <span class="actu-date-badge"> Decembre 2025</span>
+                        <span class="actu-date-badge"> Mai 2026</span>
                     </div>
-                  <h3 class="card-title" style="margin-top: .5rem;">Ecole de terrain-Lagune de somone</h3>
+                  <h3 class="card-title" style="margin-top: .5rem;">Visite Pédagogique à l'AIMS</h3>
                   <p class="card-text" style="margin-top: .75rem;">
-                        De meme que les étudiants en Licence 3 MAthématiques et Modelisation accompagnés par le Dr <strong> Thierno M.M SOW , Enseignant-Chercheur</strong> en <strong>Mathématiques Appliqées</strong>
+                        De meme que les étudiants en Licence 3 en MAthématiques et Modelisation accompagnés par le Dr <strong> Thierno M.M SOW , Enseignant-Chercheur</strong> en <strong>Mathématiques Appliqées</strong>
                         ont effectué une sortie pedagogique à l'AIMS <strong>Institut Africain des Sciences Mathématiques</strong>.
                         Cette visite leur a permis de découvrir le cadre de formation de l'institut et d'échanger avec les étudiants
                         et les enseignants. Au cours de cette rencontre ils ont été informés des conditions
@@ -201,12 +221,11 @@
                         opportinutés académiques et professionnelles offertes par l'AIMS.
                   </p>
                   <p class="card-text" style="margin-top: .75rem;">
-                        Cette activité a été une expérience enrichissante en permettant aux étudiants
-                        d'élargir leurs perspectives d'études et mieux préparer leurs parcours académiques
+                        Cette activité a été une expérience enrichissante permettant aux étudiants
+                        d'élargir leurs perspectives d'études et de mieux préparer leurs parcours académiques
                         et professionnelles.
                   </p>
              </div>   
-
         </div>
     </div>
 </section>
