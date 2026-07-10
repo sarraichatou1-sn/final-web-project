@@ -55,7 +55,7 @@ img { max-width: 100%; display: block; }
 ul  { list-style: none; }
 
 
-/*  UTILITAIRES GÉNÉRAUX */
+
 
 
 .container {
@@ -454,7 +454,7 @@ ul  { list-style: none; }
 
 /* CARDS */
 
-/* Grille responsive : 1 col → 2 → 3 */
+
 .cards-grid {
   display: grid;
   gap: 1.4rem;
@@ -721,7 +721,7 @@ ul  { list-style: none; }
 }
 @media (min-width: 600px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
 
-/* Titres des colonnes en dégradé */
+
 .footer-col h4 {
   background: linear-gradient(135deg, #4dd0e1, var(--rose));
   -webkit-background-clip: text;
@@ -954,7 +954,7 @@ tr:hover td { background: var(--cyan-light); }
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo centré sur la page de login */
+
 .login-logo { display: flex; justify-content: center; margin-bottom: 1.25rem; }
 .login-logo img {
   width: 70px; height: 70px;
