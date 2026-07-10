@@ -12,10 +12,11 @@
 <section class="section">
   <div class="container">
     {% if formations %}
-      {# Grouper par niveau #}
+
       {% set licences = formations | selectattr('niveau', 'equalto', 'Licence') | list %}
       {% set masters  = formations | selectattr('niveau', 'equalto', 'Master')  | list %}
 
+      <!-- LICENCES -->
       {% if licences %}
       <div class="section-head">
         <p class="s-eyebrow">Niveau Bac+3</p>
@@ -23,20 +24,43 @@
       </div>
       <div class="cards-grid" style="margin-bottom:3rem">
         {% for f in licences %}
-        <div class="card formation-card">
+        <div class="card">
           <div class="card-body">
+
             <span class="formation-niveau niveau-licence">Licence — 3 ans</span>
             <h3 class="card-title">{{ f.nom }}</h3>
             {% if f.departement_nom %}<p class="card-date">🏫 {{ f.departement_nom }}</p>{% endif %}
-            {% if f.conditions_admission %}<p class="card-text" style="margin-top:.5rem"><strong>Admission :</strong> {{ f.conditions_admission }}</p>{% endif %}
+            {% if f.conditions_admission %}<p class="card-text"><strong>Admission :</strong> {{ f.conditions_admission }}</p>{% endif %}
             {% if f.debouches %}<p class="card-text"><strong>Débouchés :</strong> {{ f.debouches }}</p>{% endif %}
-            
+
+            <!-- Programme par semestre -->
+            {% set mods = modules | selectattr('formation_id', 'equalto', f.id) | list %}
+            {% if mods %}
+            <div style="margin-top:1rem">
+              <p style="font-weight:700; font-size:.88rem; margin-bottom:.5rem">📋 Programme</p>
+              {% for sem in [1, 2, 3, 4, 5, 6] %}
+                {% set mods_sem = mods | selectattr('semestre', 'equalto', sem) | list %}
+                {% if mods_sem %}
+                <div class="semestre-block" style="margin-bottom:.5rem">
+                  <div class="semestre-head">Semestre {{ sem }}</div>
+                  <ul class="semestre-body">
+                    {% for mod in mods_sem %}
+                    <li>{{ mod.nom }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+
           </div>
         </div>
         {% endfor %}
       </div>
       {% endif %}
 
+      <!-- MASTERS -->
       {% if masters %}
       <div class="section-head">
         <p class="s-eyebrow">Niveau Bac+5</p>
@@ -44,14 +68,36 @@
       </div>
       <div class="cards-grid">
         {% for f in masters %}
-        <div class="card formation-card">
+        <div class="card">
           <div class="card-body">
+
             <span class="formation-niveau niveau-master">Master — 2 ans</span>
             <h3 class="card-title">{{ f.nom }}</h3>
             {% if f.departement_nom %}<p class="card-date">🏫 {{ f.departement_nom }}</p>{% endif %}
-            {% if f.conditions_admission %}<p class="card-text" style="margin-top:.5rem"><strong>Admission :</strong> {{ f.conditions_admission }}</p>{% endif %}
+            {% if f.conditions_admission %}<p class="card-text"><strong>Admission :</strong> {{ f.conditions_admission }}</p>{% endif %}
             {% if f.debouches %}<p class="card-text"><strong>Débouchés :</strong> {{ f.debouches }}</p>{% endif %}
-            
+
+            <!-- Programme par semestre -->
+            {% set mods = modules | selectattr('formation_id', 'equalto', f.id) | list %}
+            {% if mods %}
+            <div style="margin-top:1rem">
+              <p style="font-weight:700; font-size:.88rem; margin-bottom:.5rem">📋 Programme</p>
+              {% for sem in [1, 2, 3, 4, 5, 6] %}
+                {% set mods_sem = mods | selectattr('semestre', 'equalto', sem) | list %}
+                {% if mods_sem %}
+                <div class="semestre-block" style="margin-bottom:.5rem">
+                  <div class="semestre-head">Semestre {{ sem }}</div>
+                  <ul class="semestre-body">
+                    {% for mod in mods_sem %}
+                    <li>{{ mod.nom }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+
           </div>
         </div>
         {% endfor %}
