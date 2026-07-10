@@ -1,167 +1,301 @@
-{% extends 'base.html' %}
-{% block content %}
-<div class="page-hero">
-    <div class="container">
-        <h1>Galerie Photos</h1>
-        <p>
-         Découvrez en images les moments marquants de la vie de l'UFR des Sciences et Technologies
-         Avancées: Conférences , projets , activites sportives et culturelles , sorties pédagogiques
-         cérémonies et bien plus encore 
-        </p>
-    </div>
-</div>
-    <section class="section">
-    <div class="container">
-        <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-img-placeholder" style="height: 260px;">
-                <img class="card-img"
-                 src="{{ url_for('static', filename='images/perspectives-academiques2.jpg') }}"
-                 alt="Amphie de Rentrée">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/perspectives-academiques1.jpg') }}"
-                 alt="Amphie de Rentrée">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/perspectives-academiques3.jpg') }}"
-                 alt="Amphie de Rentrée">
-                 
-            </div>
-            <div class="card-body">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-top: .5rem;">Amphi de Rentrée</h2>
-                <p class="card-text" style="margin-top: .75rem;">
-                 Accueil et Orrientation des nouveaux bacheliers
-                </p>
-            </div>
-        </div>
-         <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-img-placeholder" style="height: 260px;">
-                <img class="card-img"
-                 src="{{ url_for('static', filename='images/salle-informatique1.jpg') }}"
-                 alt="Salle Informatique">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/salle-informatique2.jpg') }}"
-                 alt="Salle Informatique">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/salle-informatique3.jpg') }}"
-                 alt="Salle Informatique">
-                 
-            </div>
-            
-            <div class="card-body">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-top: .5rem;">Salle Informatique</h2>
-                <p class="card-text" style="margin-top: .75rem;">
-                 Un espace moderne mis à la disposition des étudiants pour mener à bien leurs travaux
-                 pratiques , leurs projets et activités de recherche.
-                </p>
-            </div>
-        </div>
-        <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-img-placeholder" style="height: 260px;">
-                <img class="card-img"
-                 src="{{ url_for('static', filename='images/conference2.jpg') }}"
-                 alt="Grande Conference">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/conference3.jpg') }}"
-                 alt="Grande Conference">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/conference4.jpg') }}"
-                 alt="Grande Conference">                
-            </div>
-            <div class="card-body">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-top: .5rem;">Grande Conférence</h2>
-                <p class="card-text" style="margin-top: .75rem;">
-                 Nos étudiants s'étaient tous réunis au niveau de l'Amphitheatre avec le Pr.Abdou SENE pour parler des Mathématiques
-                 et leurs importances dans le monde.
-                </p>
-            </div>
-        </div>
-         <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-img-placeholder" style="height: 260px;">
-                <img class="card-img"
-                 src="{{ url_for('static', filename='images/Delta3.jpg') }}"
-                 alt="Sortie Pédagogique">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/sortie2.jpg') }}"
-                 alt="Sortie Pédagogique">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/sortie1.jpg') }}"
-                 alt="Sortie Pédagogique"> 
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/sortie4.jpg') }}"
-                 alt="Sortie Pédagogique">                 
-            </div>
+{% extends "base.html" %}
+{% block title %}Galerie{% endblock %}
 
-            <div class="card-body">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-top: .5rem;">Sortie Pédagogique</h2>
-                <p class="card-text" style="margin-top: .75rem;">
-                Quelques images des visites pédagogiques effectuées par nos étudiants
-                </p>
-            </div>
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Galerie Photos</h1>
+    <p>
+      Découvrez en images les moments marquants de la vie de l'UFR des Sciences et Technologies
+      Avancées : conférences, projets, activités sportives, sorties pédagogiques et bien plus encore.
+    </p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- ── Amphi de Rentrée ── -->
+    <div class="section-head">
+      <p class="s-eyebrow">Vie universitaire</p>
+      <h2 class="section-title">Amphi de Rentrée</h2>
+      <p class="section-subtitle">Accueil et orientation des nouveaux bacheliers</p>
+    </div>
+    <div class="cards-grid" style="margin-bottom:3rem">
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/perspectives-academiques1.jpg') }}" alt="Amphi rentrée 1" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎓</span>'">
         </div>
-        <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-img-placeholder" style="height: 260px;">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/equipe-ufr.jpg') }}"
-                 alt="Tournoi Football">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/equipement.jpg') }}"
-                 alt="Tournoi Football"> 
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/supporters1.jpg') }}"
-                 alt="Tournoi Football"> 
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/supporters.jpg') }}"
-                 alt="Tournoi Football"> 
-                </div>                    
-            <div class="card-body">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-top: .5rem;">Tournoi Football</h2>
-                <p class="card-text" style="margin-top: .75rem;">
-                 Rencontres sportives organisées par les étudiants de l'UFR accompagnés par leurs enseignants
-                </p>
-            </div>
+        <div class="card-body">
+          <h3 class="card-title">Table de direction</h3>
+          <p class="card-text">La direction de l'UFR STA lors de la rentrée académique.</p>
         </div>
-         <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-img-placeholder" style="height: 260px;">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/excellence2.jpg') }}"
-                 alt="Journée d'Excellence">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/excellence5.jpg') }}"
-                 alt="Journée d'Excellence"> 
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/excellence6.jpg') }}"
-                 alt="Journée d'Excellence"> 
-                </div>                    
-            <div class="card-body">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-top: .5rem;">Journée d'Excellence</h2>
-                <p class="card-text" style="margin-top: .75rem;">
-                Journée pendant laquelle L'UFR cultive l'excellence
-                </p>
-            </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/perspectives-academiques2.jpg') }}" alt="Amphi rentrée 2" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎓</span>'">
         </div>
-         <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-img-placeholder" style="height: 260px;">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/projets-iot7.jpg') }}"
-                 alt="Projets IoT">
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/projets-iot4.jpg') }}"
-                 alt="Projets IoT"> 
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/projets-iot6.jpg') }}"
-                 alt="Projets IoT"> 
-                 <img class="card-img"
-                 src="{{ url_for('static', filename='images/projets-iot3.jpg') }}"
-                 alt="Projets IoT"> 
-                </div>                    
-            <div class="card-body">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-top: .5rem;">Projets IoT</h2>
-                <p class="card-text" style="margin-top: .75rem;">
-                Quelques uns des projets réalisés par nos étudiants en licence 3 en Informatique
-                </p>
-            </div>
+        <div class="card-body">
+          <h3 class="card-title">Cérémonie de rentrée</h3>
+          <p class="card-text">Accueil des nouveaux bacheliers par la direction de l'UFR.</p>
         </div>
-        
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/perspectives-academiques3.jpg') }}" alt="Amphi rentrée 3" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎓</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Étudiants en amphi</h3>
+          <p class="card-text">Les nouveaux étudiants lors de la séance d'orientation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Salle Informatique ── -->
+    <div class="section-head">
+      <p class="s-eyebrow">Infrastructure</p>
+      <h2 class="section-title">Salle Informatique</h2>
+      <p class="section-subtitle">Un espace moderne pour les travaux pratiques et projets</p>
+    </div>
+    <div class="cards-grid" style="margin-bottom:3rem">
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/salle-informatique1.jpg') }}" alt="Salle info 1" onerror="this.parentElement.innerHTML='<span class=card-img-icon>💻</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Travaux pratiques</h3>
+          <p class="card-text">Les étudiants en plein travail lors des séances de TP.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/salle-informatique2.jpg') }}" alt="Salle info 2" onerror="this.parentElement.innerHTML='<span class=card-img-icon>💻</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Salle Informatique</h3>
+          <p class="card-text">Salle équipée de postes modernes pour les TP.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/salle-informatique3.jpg') }}" alt="Salle info 3" onerror="this.parentElement.innerHTML='<span class=card-img-icon>💻</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Projets informatiques</h3>
+          <p class="card-text">Espace dédié aux projets et activités de recherche.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Grande Conférence ── -->
+    <div class="section-head">
+      <p class="s-eyebrow">Événements</p>
+      <h2 class="section-title">Grande Conférence</h2>
+      <p class="section-subtitle">Avec le Pr. Abdou SÈNE sur les Mathématiques</p>
+    </div>
+    <div class="cards-grid" style="margin-bottom:3rem">
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/conference2.jpg') }}" alt="Conférence 1" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎤</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Conférence — Vue 1</h3>
+          <p class="card-text">Le Pr. Abdou SÈNE présentant ses travaux aux étudiants.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/conference3.jpg') }}" alt="Conférence 2" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎤</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Conférence — Vue 2</h3>
+          <p class="card-text">L'amphithéâtre comble lors de la grande conférence.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/conference4.jpg') }}" alt="Conférence 3" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎤</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Conférence — Vue 3</h3>
+          <p class="card-text">Échanges entre le conférencier et les étudiants de l'UFR.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Sorties Pédagogiques ── -->
+    <div class="section-head">
+      <p class="s-eyebrow">Terrain</p>
+      <h2 class="section-title">Sorties Pédagogiques</h2>
+      <p class="section-subtitle">Visites de terrain effectuées par nos étudiants</p>
+    </div>
+    <div class="cards-grid" style="margin-bottom:3rem">
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/Delta3.jpg') }}" alt="Delta" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🌊</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Delta du Sine-Saloum</h3>
+          <p class="card-text">Visite d'étude sur le site de Diakhanor.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/sortie2.jpg') }}" alt="Sortie 2" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🌿</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Sur le terrain</h3>
+          <p class="card-text">Nos étudiants en pleine activité pédagogique.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/sortie1.jpg') }}" alt="Sortie 1" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎓</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Delta du Sine-Saloum</h3>
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/sortie4.jpg') }}" alt="Sortie 4" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🌍</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Lagune de Somone</h3>
+          <p class="card-text">École de terrain dans la lagune de Somone.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Tournoi Football ── -->
+    <div class="section-head">
+      <p class="s-eyebrow">Sport</p>
+      <h2 class="section-title">Tournoi Football</h2>
+      <p class="section-subtitle">Rencontres sportives organisées par les étudiants</p>
+    </div>
+    <div class="cards-grid" style="margin-bottom:3rem">
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/equipe-ufr.jpg') }}" alt="Équipe" onerror="this.parentElement.innerHTML='<span class=card-img-icon>⚽</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Équipe UFR STA</h3>
+          <p class="card-text">Photo de l'équipe de football de l'UFR STA.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/equipement.jpg') }}" alt="Équipement" onerror="this.parentElement.innerHTML='<span class=card-img-icon>⚽</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Équipements sportifs</h3>
+          <p class="card-text">Le matériel mis à disposition pour le tournoi.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/supporters1.jpg') }}" alt="Supporters 1" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎉</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Supporters</h3>
+          <p class="card-text">Les étudiants supporters lors du tournoi.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/supporters.jpg') }}" alt="Supporters 2" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🎉</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Ambiance du match</h3>
+          <p class="card-text">Belle ambiance lors des rencontres sportives de l'UFR.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Journée d'Excellence ── -->
+    <div class="section-head">
+      <p class="s-eyebrow">Excellence</p>
+      <h2 class="section-title">Journée d'Excellence</h2>
+      <p class="section-subtitle">L'UFR cultive l'excellence académique</p>
+    </div>
+    <div class="cards-grid" style="margin-bottom:3rem">
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/excellence2.jpg') }}" alt="Excellence 1" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🏆</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Lauréats</h3>
+          <p class="card-text">Les étudiants primés lors de la journée d'excellence.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/excellence5.jpg') }}" alt="Excellence 2" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🏆</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cérémonie d'excellence</h3>
+          <p class="card-text">Remise des prix aux meilleurs étudiants de l'UFR.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/excellence6.jpg') }}" alt="Excellence 3" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🏆</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Moments forts</h3>
+          <p class="card-text">L'UFR STA célèbre l'excellence de ses étudiants.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Projets IoT ── -->
+    <div class="section-head">
+      <p class="s-eyebrow">Projets étudiants</p>
+      <h2 class="section-title">Projets IoT</h2>
+      <p class="section-subtitle">Réalisés par les étudiants en Licence 3 Informatique</p>
+    </div>
+    <div class="cards-grid" style="margin-bottom:3rem">
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/projets-iot7.jpg') }}" alt="IoT 1" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🔧</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Smart Parking</h3>
+          <p class="card-text">Système de parking intelligent .</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/projets-iot4.jpg') }}" alt="IoT 2" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🔧</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Détecteur d'incendie</h3>
+          <p class="card-text">Système de détection automatique d'incendie.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/projets-iot6.jpg') }}" alt="IoT 3" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🔧</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Serrure intelligente</h3>
+          <p class="card-text">Système de contrôle d'accès automatisé.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder" style="height:220px">
+          <img class="card-img" src="{{ url_for('static', filename='images/projets-iot3.jpg') }}" alt="IoT 4" onerror="this.parentElement.innerHTML='<span class=card-img-icon>🔧</span>'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Feux de circulation intelligente</h3>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
-    
+
 {% endblock %}
-    
