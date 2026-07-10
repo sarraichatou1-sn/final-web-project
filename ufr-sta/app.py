@@ -12,10 +12,10 @@ app.secret_key = 'ufr_sta_secret_key_2026'
 DB_CONFIG = {
     'host':     'localhost',
     'user':     'root',
-    'password': '',          # Mot de passe MySQL (vide par défaut sur XAMPP)
+    'password': '',          
     'database': 'ufr_sta',
     'charset':  'utf8mb4',
-    'cursorclass': pymysql.cursors.DictCursor  # Résultats en dictionnaire
+    'cursorclass': pymysql.cursors.DictCursor  
 }
 
 def get_db():
@@ -77,14 +77,7 @@ def departements():
     deps = query_db('SELECT * FROM departements ORDER BY nom')
     return render_template('departements.html', departements=deps)
 
-@app.route('/departements/<int:dep_id>')
-def departement_detail(dep_id):
-    dep        = query_one('SELECT * FROM departements WHERE id = %s', (dep_id,))
-    formations = query_db('SELECT * FROM formations WHERE departement_id = %s', (dep_id,))
-    if not dep:
-        flash('Département introuvable.', 'danger')
-        return redirect(url_for('departements'))
-    return render_template('departement_detail.html', departement=dep, formations=formations)
+
 
 # — Formations
 @app.route('/formations')
@@ -95,19 +88,8 @@ def formations():
            LEFT JOIN departements d ON f.departement_id = d.id
            ORDER BY f.niveau, f.nom'''
     )
-    return render_template('formations.html', formations=data)
-
-@app.route('/formations/<int:formation_id>')
-def formation_detail(formation_id):
-    formation = query_one('SELECT * FROM formations WHERE id = %s', (formation_id,))
-    modules   = query_db(
-        'SELECT * FROM modules_formation WHERE formation_id = %s ORDER BY semestre, ordre',
-        (formation_id,)
-    )
-    if not formation:
-        flash('Formation introuvable.', 'danger')
-        return redirect(url_for('formations'))
-    return render_template('formation_detail.html', formation=formation, modules=modules)
+    modules = query_db('SELECT * FROM modules_formation ORDER BY formation_id, semestre, ordre')
+    return render_template('formations.html', formations=data, modules=modules)
 
 # — Actualités
 @app.route('/actualites')
@@ -115,12 +97,7 @@ def actualites():
     data = query_db('SELECT * FROM actualites ORDER BY date DESC')
     return render_template('actualites.html', actualites=data)
 
-@app.route('/actualites/<int:actu_id>')
-def actualite_detail(actu_id):
-    actu = query_one('SELECT * FROM actualites WHERE id = %s', (actu_id,))
-    if not actu:
-        return redirect(url_for('actualites'))
-    return render_template('actualite_detail.html', actualite=actu)
+
 
 # — Activités
 @app.route('/activites')
@@ -128,13 +105,7 @@ def activites():
     data = query_db('SELECT * FROM activites ORDER BY date DESC')
     return render_template('activites.html', activites=data)
 
-@app.route('/activites/<int:act_id>')
-def activite_detail(act_id):
-    act    = query_one('SELECT * FROM activites WHERE id = %s', (act_id,))
-    photos = query_db('SELECT * FROM galerie_photos WHERE activite_id = %s', (act_id,))
-    if not act:
-        return redirect(url_for('activites'))
-    return render_template('activite_detail.html', activite=act, photos=photos)
+
 
 # — Galerie
 @app.route('/galerie')
